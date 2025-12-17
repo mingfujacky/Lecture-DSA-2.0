@@ -62,10 +62,16 @@ style: |
 
 [![Roadmap To Learn Data Structures And Algorithms](https://i.ytimg.com/vi/uZe1Bbsycyc/mqdefault.jpg)](https://youtu.be/uZe1Bbsycyc?si=zcS704k5KTRrkD_u&t=229)
 
+# 
+[![5 Steps to Learn DSA - Complete Roadmap To Learn DSA
+](https://i.ytimg.com/vi/9KeE_uDsOI8/mqdefault.jpg)](https://youtube.com/shorts/9KeE_uDsOI8?si=1pKkHL-lAU4MXcAd)
+
+Data Structures was HARD until I Learned these 8 Patterns
+
 
 # Why Should I Care About Data Structure
 ### Solve Lottery by SET or LIST, which data structure is better?
 [Code of Lottery](code/lottery.py)
 
 # A Mental Model for Applying Data Structures
-![bg right:50% w:80% apply data structure](files/image/a_mental_model_for_applying_data_structures.png)
+![bg right:50% w:80% apply data structure](asset/image/a_mental_model_for_applying_data_structures.png)
