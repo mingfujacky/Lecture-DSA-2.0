@@ -22,10 +22,18 @@ style: |
   .middle-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 0.5rem;
+    align-items: start;
   }
   .middle-grid img {
     width: 75%;
+    justify-self: start;
+    display: block;
+  }
+  .middle-grid p, 
+  .middle-grid ul,
+  .middle-grid ol {
+  margin: 0;
   }
   .grid {
     display: grid;
@@ -48,26 +56,86 @@ style: |
   }
 ---
 # Roadmap of Python Programmer
-![Newbie programmer bg right:35% w:90%](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjb_CZf_pQ9Zkg3ExzYj-WrOL8XFsCV8U7Dh0r5wDPWJrUdVGdhwNWZvx6_Mh2vh9Kxd1iyAV5jbcbXh67McVHuCl-FBe8-tv30ZYXBrksuKi6_dlwbjhUzfTVmEk6RmwsEjq_hJiBv1K4/s1600/S__5816325.jpg)
 
-<span class="small-text">聽說Python簡單又強大，於是心懷期待，想著可以一步登天，但當面對新問題時，沒有程式設計思路，連問ChatGPT問題都不知道該怎麼問 </span><br>
-<span class="small-text">(1) Python 是解問題的工具, 寫程式的核心是「輸入、處理、輸出」，掌握基本框架，才能靈活運用</span>
-<span class="small-text">(2) 物件導向編程(OOP)是程式管理和組織的基礎，使程式是有結構、有邏輯，易擴展</span>
-<span class="small-text">(3) 解決問題時，好的資料結構和演算法能增進執行效率</span>
-<span class="small-text">(4) 有了基礎的邏輯思維和結構設計能力，學習AI/ML或其他高階技能才會事半功倍。</span> 
+<div class="middle-grid">
+
+<div>
+
+![Newbie programmer w:100%](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjb_CZf_pQ9Zkg3ExzYj-WrOL8XFsCV8U7Dh0r5wDPWJrUdVGdhwNWZvx6_Mh2vh9Kxd1iyAV5jbcbXh67McVHuCl-FBe8-tv30ZYXBrksuKi6_dlwbjhUzfTVmEk6RmwsEjq_hJiBv1K4/s1600/S__5816325.jpg)
+
+</div>
+
+<div>
+
+<span class="small-text">
+Python 簡單又強大，但面對新問題時卻不知道如何下手？
+
+1. **核心觀念 (Core)**: 
+   掌握「輸入、處理、輸出」的基本框架。
+2. **結構化 (Structure)**: 
+   物件導向 (OOP) 讓程式有邏輯、易擴展。
+3. **效率 (Efficiency)**: 
+   <span class="red-text">**DSA (資料結構與演算法)**</span> 是程式運行的引擎。
+4. **未來 (Future)**: 
+   有了邏輯基礎，學習 AI/ML 才會事半功倍。
+</span>
+
+</div>
+
+</div>
 
 # Welcome to DSA
-- <span class="blue-text">**Data structures**</span>: organize and store information in a program to efficiently manipulate data
-- <span class="blue-text">**Algorithm**</span>: set of instructions designed to solve a specific problem
+Data structures and algorithms (DSA) are the foundational tools of computer science. They allow us to write code that is not just correct, but also efficient.
 
-[![Roadmap To Learn Data Structures And Algorithms](https://i.ytimg.com/vi/uZe1Bbsycyc/mqdefault.jpg)](https://youtu.be/uZe1Bbsycyc?si=zcS704k5KTRrkD_u&t=229)
+* <span class="blue-text">**Data structures**</span> are specific ways of organizing and storing data so it can be accessed and modified effectively.
+* <span class="blue-text">**Algorithms**</span> are the step-by-step procedures or "recipes" for performing calculations, data processing, and automated reasoning.
+* Together, they help us balance the trade-offs between execution speed (Time Complexity) and memory usage (Space Complexity).
 
-# 
+# Major Areas of DSA
+- **The Containers (Data Structures)**
+We can examine how we store data, starting with the differences between linear structures like Arrays and Linked Lists, or more complex ones like Trees and Graphs.
+- **The Processes (Algorithms)**
+We can look at the logic behind manipulating data, such as how we find a specific item (Searching) or arrange items in order (Sorting).
+- **The Scorecard (Big O Notation)**
+We can discuss how we measure the "cost" of our code to predict how its performance changes as the amount of input data grows.
+
+# Categorize Data Structures (1/2)
+
+<div class="grid">
+
+<div>
+
+![w:100% categories data structure](asset/image/categorize_data_structures_2.png)
+
+</div>
+
+<div>
+
+<span class="small-text">
+
+- **Built-in / ADT**: 實作層級分類 
+   - Built-in：Python 已提供的內建資料型別
+   - ADT：以 class 自行實作的抽象資料型別
+- **Linear / Non-linear**: 邏輯結構分類
+- **Stack / Queue** 是 ADT, Python 常用 list來實作Stack, 用 collections.deque 來實作Queue
+</span>
+
+</div>
+
+</div>
+
+# Categorize Data Structures (2/2)
+![w:900 categories data structure](asset/image/categorize_data_structures_1.png)
+
+# 5 Steps to Learn DSA
 [![5 Steps to Learn DSA - Complete Roadmap To Learn DSA
 ](https://i.ytimg.com/vi/9KeE_uDsOI8/mqdefault.jpg)](https://youtube.com/shorts/9KeE_uDsOI8?si=1pKkHL-lAU4MXcAd)
 
-Data Structures was HARD until I Learned these 8 Patterns
-
+1. Learn at least one programming language
+2. Learn about complexity
+3. Learn data structures and algorithms
+4. Practice data structures and algorithms
+5. Participate in programming challenges to test your skill and efficiency
 
 # Why Should I Care About Data Structure
 ### Solve Lottery by SET or LIST, which data structure is better?
