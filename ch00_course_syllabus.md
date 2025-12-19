@@ -71,7 +71,7 @@ style: |
   - Understand basic data structures like arrays, linked lists, trees and graphs.
   - Learn basic algorithms like sorting, searching and traversal.
   - Analyze the performance of algorithms using time complexity.
-  - Use Python to implement solutions by adopting appropriate data structures and algorithms.
+  - Use Python to implement solution upon appropriate data structure and algorithm.
 
 - **授課方式**
   - 課堂講解與實作

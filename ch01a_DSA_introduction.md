@@ -89,7 +89,7 @@ Data structures and algorithms (DSA) are the foundational tools of computer scie
 
 * <span class="blue-text">**Data structures**</span> are specific ways of organizing and storing data so it can be accessed and modified effectively.
 * <span class="blue-text">**Algorithms**</span> are the step-by-step procedures or "recipes" for performing calculations, data processing, and automated reasoning.
-* Together, they help us balance the trade-offs between execution speed (Time Complexity) and memory usage (Space Complexity).
+* Together, they help us balance the trade-offs between execution speed (<span class="blue-text">**Time Complexity**</span>) and memory usage (Space Complexity).
 
 # Major Areas of DSA
 - **The Containers (Data Structures)**
@@ -98,6 +98,16 @@ We can examine how we store data, starting with the differences between linear s
 We can look at the logic behind manipulating data, such as how we find a specific item (Searching) or arrange items in order (Sorting).
 - **The Scorecard (Big O Notation)**
 We can discuss how we measure the "cost" of our code to predict how its performance changes as the amount of input data grows.
+
+# 5 Steps to Learn DSA
+[![5 Steps to Learn DSA - Complete Roadmap To Learn DSA
+](https://i.ytimg.com/vi/9KeE_uDsOI8/mqdefault.jpg)](https://youtube.com/shorts/9KeE_uDsOI8?si=1pKkHL-lAU4MXcAd)
+
+1. Learn at least one programming language
+2. Learn about complexity
+3. Learn data structures and algorithms
+4. Practice data structures and algorithms
+5. Participate in programming challenges to test your skill and efficiency
 
 # Categorize Data Structures (1/2)
 
@@ -127,19 +137,86 @@ We can discuss how we measure the "cost" of our code to predict how its performa
 # Categorize Data Structures (2/2)
 ![w:900 categories data structure](asset/image/categorize_data_structures_1.png)
 
-# 5 Steps to Learn DSA
-[![5 Steps to Learn DSA - Complete Roadmap To Learn DSA
-](https://i.ytimg.com/vi/9KeE_uDsOI8/mqdefault.jpg)](https://youtube.com/shorts/9KeE_uDsOI8?si=1pKkHL-lAU4MXcAd)
-
-1. Learn at least one programming language
-2. Learn about complexity
-3. Learn data structures and algorithms
-4. Practice data structures and algorithms
-5. Participate in programming challenges to test your skill and efficiency
-
 # Why Should I Care About Data Structure
 ### Solve Lottery by SET or LIST, which data structure is better?
-[Code of Lottery](code/lottery.py)
+[Code of Lottery](code/lottery_comparison.py)
+
+# Time Complexity Comparison of Lottery Code (Set)
+```python
+def lottery_by_set(numbers):
+    # 產生開獎號碼
+    buyer_nums = set(numbers)
+    lottery_nums = set()
+    while len(lottery_nums) < 6:
+        lottery_nums.add(random.randint(1, 49))
+
+    bingo_nums = lottery_nums & buyer_nums  # 計算中獎號碼
+    return lottery_nums, bingo_nums
+```
+- 產生開獎號碼: O(n) 隨著號碼增加，時間線性增加
+- 計算中獎號碼: O(1) 集合運算，時間不隨號碼增加而增加
+
+# Time Complexity Comparison of Lottery Code (List)
+```python
+def lottery_by_list(numbers):
+    buyer_nums = list(numbers)   # 產生開獎號碼
+    lottery_nums = []
+    while len(lottery_nums) < 6:
+        num = random.randint(1, 49)
+        if num not in lottery_nums:
+            lottery_nums.append(num)
+    bingo_nums = []              # 計算中獎號碼
+    for num1 in lottery_nums:
+        for num2 in buyer_nums:
+            if num1 == num2:
+                bingo_nums.append(num1)
+                break
+    return lottery_nums, bingo_nums
+```
+- 產生開獎號碼: O(n) 隨著號碼增加，時間線性增加
+- 計算中獎號碼: O(n**2) 隨著號碼增加，時間成兩次方增加
+
+# Brief Data Structures Types
+[Types of Data Structures（Facebook 影片）](https://www.facebook.com/share/r/1B3QMzoAYA/?mibextid=wwXIfr)
+
+# 與資料結構最常見對應的演算法
+![w:900 categories data structure](asset/image/algorithms_by_data_structure.png)
+
+# 演算法設計範式
+![w:900 categories data structure](asset/image/algorithms_by_設計範式.png)
+
+# Why Should I Care About Algorithms
+### Searching a number by linear search vs binary search, which algorithm is better?
+[Code of Search](code/lottery.py)
+
+# Time Complexity Comparison of Search Code (Linear Search)
+```python
+def linear_search(arr, x):
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i
+    return -1
+```
+搜尋的時間複雜度: O(n) 隨著資料量增加，時間線性增加
+
+# Time Complexity Comparison of Search Code (Binary Search)
+```python
+def binary_search(arr, x):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] < x:
+            low = mid + 1
+        elif arr[mid] > x:
+            high = mid - 1
+        else:
+            return mid
+    return -1
+
+```
+搜尋的時間複雜度: O(log n) 隨著資料量增加，時間對數增加
+
 
 # A Mental Model for Applying Data Structures
 ![bg right:50% w:80% apply data structure](asset/image/a_mental_model_for_applying_data_structures.png)
