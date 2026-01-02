@@ -56,29 +56,21 @@ style: |
   }
 ---
 # Roadmap of Python Programmer
-
 <div class="middle-grid">
 
 <div>
-
-![Newbie programmer w:100%](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjb_CZf_pQ9Zkg3ExzYj-WrOL8XFsCV8U7Dh0r5wDPWJrUdVGdhwNWZvx6_Mh2vh9Kxd1iyAV5jbcbXh67McVHuCl-FBe8-tv30ZYXBrksuKi6_dlwbjhUzfTVmEk6RmwsEjq_hJiBv1K4/s1600/S__5816325.jpg)
-
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjb_CZf_pQ9Zkg3ExzYj-WrOL8XFsCV8U7Dh0r5wDPWJrUdVGdhwNWZvx6_Mh2vh9Kxd1iyAV5jbcbXh67McVHuCl-FBe8-tv30ZYXBrksuKi6_dlwbjhUzfTVmEk6RmwsEjq_hJiBv1K4/s1600/S__5816325.jpg" width="100%"/>
 </div>
 
 <div>
 
-<span class="small-text">
-Python 簡單又強大，但面對新問題時卻不知道如何下手？
+> 核心觀念: 輸入、處理、輸出的基本框架
 
-1. **核心觀念 (Core)**: 
-   掌握「輸入、處理、輸出」的基本框架。
-2. **結構化 (Structure)**: 
-   物件導向 (OOP) 讓程式有邏輯、易擴展。
-3. **效率 (Efficiency)**: 
-   <span class="red-text">**DSA (資料結構與演算法)**</span> 是程式運行的引擎。
-4. **未來 (Future)**: 
-   有了邏輯基礎，學習 AI/ML 才會事半功倍。
-</span>
+> 結構化: OOP讓程式有邏輯、易擴展
+
+> 效率: DSA是程式運行的引擎
+
+> 未來: 有了邏輯基礎，再來學習AI/ML
 
 </div>
 
@@ -123,11 +115,15 @@ We can discuss how we measure the "cost" of our code to predict how its performa
 
 <span class="small-text">
 
-- **Built-in / ADT**: 實作層級分類 
+> **Built-in / ADT**: 實作層級分類 
    - Built-in：Python 已提供的內建資料型別
    - ADT：以 class 自行實作的抽象資料型別
-- **Linear / Non-linear**: 邏輯結構分類
-- **Stack / Queue** 是 ADT, Python 常用 list來實作Stack, 用 collections.deque 來實作Queue
+> **Linear / Non-linear**: 邏輯結構分類
+   - Linear：資料元素間有線性關係
+   - Non-linear：資料元素間無線性關係
+> **Stack / Queue** 是 ADT
+   - 常用 Python list來實作Stack
+   - 常用 Python collections.deque 來實作Queue
 </span>
 
 </div>
@@ -141,7 +137,7 @@ We can discuss how we measure the "cost" of our code to predict how its performa
 ### Solve Lottery by SET or LIST, which data structure is better?
 [Code of Lottery](code/lottery_comparison.py)
 
-# Time Complexity Comparison of Lottery Code (Set)
+# Time Complexity of Set Implementation
 ```python
 def lottery_by_set(numbers):
     # 產生開獎號碼
@@ -156,7 +152,7 @@ def lottery_by_set(numbers):
 - 產生開獎號碼: O(n) 隨著號碼增加，時間線性增加
 - 計算中獎號碼: O(1) 集合運算，時間不隨號碼增加而增加
 
-# Time Complexity Comparison of Lottery Code (List)
+# Time Complexity of List Implementation
 ```python
 def lottery_by_list(numbers):
     buyer_nums = list(numbers)   # 產生開獎號碼
@@ -189,7 +185,7 @@ def lottery_by_list(numbers):
 ### Searching a number by linear search vs binary search, which algorithm is better?
 [Code of Search](code/lottery.py)
 
-# Time Complexity Comparison of Search Code (Linear Search)
+# Time Complexity of Linear Search
 ```python
 def linear_search(arr, x):
     for i in range(len(arr)):
@@ -199,7 +195,7 @@ def linear_search(arr, x):
 ```
 搜尋的時間複雜度: O(n) 隨著資料量增加，時間線性增加
 
-# Time Complexity Comparison of Search Code (Binary Search)
+# Time Complexity of Binary Search
 ```python
 def binary_search(arr, x):
     low = 0
