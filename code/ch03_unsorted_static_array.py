@@ -1,6 +1,6 @@
-class StaticArray:
+class UnsortedStaticArray:
     """
-    StaticArray
+    UnsortedStaticArray
     ------------
     A fixed-capacity array implementation with type checking.
 
@@ -148,7 +148,7 @@ class StaticArray:
         shows size, capacity, and active elements
         """
         return (
-            f"StaticArray(size={self._size}, "
+            f"UnsortedStaticArray(size={self._size}, "
             f"max_size={self._max_size}, "
             f"data={self._array[:self._size]!r})"
         )
@@ -162,9 +162,9 @@ class StaticArray:
 
 
 if __name__ == "__main__":
-    a = StaticArray(5, "int")  # _init__
-    # b = StaticArray(-1, "int")  # _init__
-    # c = StaticArray(5, "complex")  # _init__
+    a = UnsortedStaticArray(5, "int")  # _init__
+    # b = UnsortedStaticArray(-1, "int")  # _init__
+    # c = UnsortedStaticArray(5, "complex")  # _init__
     #     print(a.max_size)
     #     print(len(a))  # __len__
 

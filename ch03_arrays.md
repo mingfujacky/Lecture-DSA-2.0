@@ -58,25 +58,26 @@ style: |
 <img src="asset/image/array_memory_address.png" width="800">
 
 # Arrays
-- Key characteristics
-  - It stores a collection of data
-  - Its elements can be accessed by index
-  - Elements don’t have to be accessed sequentially
-- Implementing arrays as a core language feature
-  - Arrays are allocated in memory with sequential locations
-  - Arrays are restricted to storing data of the same type
-- Extendable: static arrays and dynamic arrays
-- Sequence: unsorted arrays and sorted arrays
+- Stores elements in contiguous memory
+- Supports O(1) index-based access
+- Elements are of the same data type
+- Insertions and deletions maybe costly due to shifting approach
+  - Insertion at the end: O(1)
+  - Insertion at the beginning or middle: O(n)
+  - Deletion at the end: O(1)
+  - Deletion at the beginning or middle: O(n)
+- Can be sorted or unsorted
+- Can be static (fixed size) or dynamic (resizable)
 
-# Use List to Implement Unsorted Static Array
--	_max_size：固定容量(capacity)
--	_size：實際存在的元素數量
-- insert ≠ __setitem__（一個改 size，一個不改）
-- delete 使用 shift-left → 保留順序、O(n)
--	__len__, __getitem__, __setitem__ magic methods
-
+# Implement Unsorted Static Array by Python List
+- insert function: insert an value at the end of the array
+- delete function: delete an value at a given index, shift elements to the left
+- find function: find the index of a given value 
+<img src="asset/image/unsorted_static_array_class_diagram.png" width="400">
 >[Code: Unsorted Static Array by List](code/ch03_unsorted_static_array.py)
 
+# Are Lists Arrays?
+- Python lists aren’t static arrays: static arrays have a fixed length, as well as a type
 
 # Arrays in Python
 
