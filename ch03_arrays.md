@@ -51,23 +51,46 @@ style: |
     font-size: 0.75rem;
   }
 ---
-# What is a Array
+# What is Array
 - Array is a data structure consisting of a collection of elements, of same memory size, each identified by an index. 
 - Memory address of an element can be computed by 
   [array_start_address] + ([size] * [index])
 <img src="asset/image/array_memory_address.png" width="800">
 
-# Arrays
-- Stores elements in contiguous memory
-- Supports O(1) index-based access
+# Characteristics of Arrays
+- Stores elements in contiguous memory 
+  <span class="blue-text">=> array size must be known when creating (static array)</span>
 - Elements are of the same data type
-- Insertions and deletions maybe costly due to shifting approach
-  - Insertion at the end: O(1)
-  - Insertion at the beginning or middle: O(n)
-  - Deletion at the end: O(1)
-  - Deletion at the beginning or middle: O(n)
+ <span class="blue-text"> => memory size of each element is the same => calculate address by formula => index-based access</span>
+- Access element is O(1) due to index-based access
+- Insertion and deletion is either O(1) or O(n) depending on shifting approach
+  - Insertion or deletion at the end: O(1)
+  - Insertion or deletion at the beginning or middle: O(n)
 - Can be sorted or unsorted
 - Can be static (fixed size) or dynamic (resizable)
+
+# Are Lists Arrays?
+- Lists aren’t arrays
+  - Arrays have a fixed length and an unique type
+  - Lists are dynamic and can store elements of different types
+  - But, list is the typical go-to data type for Python programmers needing an array or array-like structure
+- List doesn’t store actual values directly. Instead, it stores references (pointers) to objects in memory. That’s why lists can hold elements of different types and provide index-based access.
+- a = [10, 20, 'GfG', 40, True]
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20250213130630102777/python-list.webp" width="300">
+
+# How Lists Expand in Memory
+- Python allocates some extra space in memory, such that we can add a few items to it.
+- If we add enough items to the list, these spare locations will be used up, thus forcing Python to allocate a new space of memory and move all the pointers to that location. 
+- Python does this for us automatically and behind the scenes
+```python
+import sys
+my_list = []
+for k in range(32):
+    l = len(my_list)
+    s = sys.getsizeof(my_list)
+    print(f"Length: {l:3d}; Size in bytes: {s:4d}")
+    my_list.append(None)
+```
 
 # Implement Unsorted Static Array by Python List
 - insert function: insert an value at the end of the array
@@ -76,35 +99,27 @@ style: |
 <img src="asset/image/unsorted_static_array_class_diagram.png" width="400">
 >[Code: Unsorted Static Array by List](code/ch03_unsorted_static_array.py)
 
-# Are Lists Arrays?
-- Python lists aren’t static arrays: static arrays have a fixed length, as well as a type
+# Implement Sorted Static Array by Python List
+- insert function: insert an value at the correct position to maintain sorted order, shift elements to the right
 
-# Arrays in Python
+>[Code: Sorted Static Array by List](code/ch03_sorted_static_array.py)
 
-Class          |Fixed Size|Fixed Type|Implementation
----------------|----------|-----------------|--------------
-**list**       |NO    |NO               |not exactly an array
-**array.array**|NO    |YES              |dynamic array
-**Numpy.array**|YES   |YES              |static array
+# Array Applications
+- One dimensional array
+- Greedy methods
+- Two dimensional array
+- Dynamic programming
+- String manipulation
+- String matching
 
-[Code: array-like in Python](code/ch02a_python_array_like.py)
+>[Code: Array Applications](code/ch03_array_applications.ipynb)
 
-# Static Arrays as a Core Language Feature
-  - allocated in continuous memory
-  - restricted to storing data of the same type
-  - size of arrays must be decided when the array is created, and that size can’t be changed.
+# Supplement: Python Magic Methods
+- Magic methods that start and end with double underscores are special methods in Python
+- They allow you to define how objects of your class behave with built-in operations and functions.
+- You can customize the behavior of your objects, such as arithmetic operations, comparisons, string representations, and more.
 
-# The core array class will have the following methods:
-  - Basically, it is a static array implementation.
-  - Initialize: create an array with a given size and type
-  - Get the value at a given index
-  - Get the number of elements in the array
-  - Display the array
-
-[Code: core array](code/ch02b_core_array.py)
-
-# Magic Method
-![bg right:70% w:60%](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff69d1d4d-91ac-409a-baa2-ccd4c4aaab13_1700x2087.png)
+![bg right:50% w:60%](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff69d1d4d-91ac-409a-baa2-ccd4c4aaab13_1700x2087.png)
 
 # \_\_str\_\_() vs \_\_repr\_\_()
 Method | Purpose | When Used?
@@ -113,14 +128,4 @@ Method | Purpose | When Used?
 \_\_repr\_\_()|Developer-friendly, unambiguous representation (often used for debugging)| repr(obj), or print(obj) if \_\_str\_\_() is missing
 
 
-# Lab
-(1) Create a package structure
-my_package/
-|---- \_\_init\_\_.py
-|---- arrays/
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- \_\_init\_\_.py
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- core.py
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- sorted_array.py
-|---- queues/
-
-(2) Write a main program to import core.py and use class Array to create an array object (codetype = i, size = 5), then store 4 integers
+# Homework DSA_HW_B
