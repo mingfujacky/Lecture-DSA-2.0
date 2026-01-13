@@ -80,29 +80,32 @@ style: |
 - (10%) 課堂參與
   > 5次點名 
   > 正常出席得 2分, 有請假單得 1分, 無故缺席得 0分
-- (30%) 課後作業
-  > 6次作業 (不受理遲交)
+- (30%) 課後作業: 6次作業 (不受理遲交)
 - (20%) 期中考試
 - (20%) 期末考試
-- (20%) 期末專題
-  > 期末考前一週進行口頭報告
-  > 期末考後一週繳交書面報告(不受理遲交)
+- (20%) 期末專題: 期末考前一週進行口頭報告並繳交書面報告 (不受理遲交)
+> 除「成績計算」或「登錄」有誤外，請同學勿以個人理由請求調整成績
 
-# 試場規定
+# 期中期末考試試場規定
 > 1. 按照助教安排進入考場入座，不得攜帶書本及參考資料
 > 2. 不得使用手機，請將手機放置在監考人員的可視範圍內，如桌上或教室前面
 > 3. 攜帶學生證或其他可以確認身份的證件
 > 4. 考試時間為六十分鐘
 
 # 期末專題
-- 一人一組，主題需與課程相關
-- 報告內容包含但不限於:
-  - Explain the problem you plan to solve
-  - Describe the algorithm and data structure you take to solve the problem
-  - Demonstrate code structure and explain major functions
-  - Analyze performance
-- 參考題目集:
-https://docs.google.com/spreadsheets/d/1_VRbVq8M-T5hg49GJxGY-q_SOzCwAgBK8vVqmmurYZ0/edit?gid=994583042#gid=994583042
+- 本課程之期末專題採個人專題形式進行。每位同學將被隨機分配四至五題 LeetCode 題目，作為期末專題之研究與實作內容。
+- 同學需針對所分配之每一題，進行完整的問題分析與實作說明，將成果彙整成一份期末專題書面報告。
+- 期末將於課堂中進行期末專題口頭報告。每位同學報告時間為十分鐘，可自行選擇一至兩題被分配的 LeetCode 題目進行報告。
+- 所有程式實作須以 Python 撰寫，並須確保程式碼之正確性、可讀性與整體結構之完整性。
+
+# 報告內容須包含（但不限於）：
+-	題目說明與問題定義
+- 解題演算法與資料結構之說明
+- 程式架構說明與主要函式解析
+- Big-O分析
+
+>參考題目集:
+https://www.techinterviewhandbook.org/grind75/
 
 # 授課大綱
 [114下學期](https://timetable.nycu.edu.tw/?r=main/crsoutline&Acy=114&Sem=2&CrsNo=520009&lang=zh-tw)
