@@ -2,8 +2,9 @@ import random
 
 
 def lottery_by_set(numbers):
-    # 產生開獎號碼
     buyer_nums = set(numbers)
+    
+    # 產生開獎號碼
     lottery_nums = set()
     while len(lottery_nums) < 6:
         lottery_nums.add(random.randint(1, 49))
@@ -13,8 +14,9 @@ def lottery_by_set(numbers):
 
 
 def lottery_by_list(numbers):
-    # 產生開獎號碼
     buyer_nums = list(numbers)
+    
+    # 產生開獎號碼
     lottery_nums = []
     while len(lottery_nums) < 6:
         num = random.randint(1, 49)

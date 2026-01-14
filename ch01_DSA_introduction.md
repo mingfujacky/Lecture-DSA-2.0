@@ -64,9 +64,9 @@ style: |
 
 <div>
 
-> 核心觀念: 輸入、處理、輸出的基本框架
+> 核心: 輸入、處理、輸出的基本框架
 
-> 結構化: OOP讓程式有邏輯、易擴展
+> 結構: OOP讓程式有邏輯、易擴展
 
 > 效率: DSA是程式運行的引擎
 
@@ -117,13 +117,11 @@ We can discuss how we measure the "cost" of our code to predict how its performa
 
 > **Built-in / ADT**: 實作層級分類 
    - Built-in：Python 已提供的內建資料型別
-   - ADT：以 class 自行實作的抽象資料型別
+   - ADT：開發者需自行實作的抽象資料型別
 > **Linear / Non-linear**: 邏輯結構分類
    - Linear：資料元素間有線性關係
    - Non-linear：資料元素間無線性關係
-> **Stack / Queue** 是 ADT
-   - 常用 Python list來實作Stack
-   - 常用 Python collections.deque 來實作Queue
+
 </span>
 
 </div>
@@ -140,8 +138,8 @@ We can discuss how we measure the "cost" of our code to predict how its performa
 # Time Complexity of Set Implementation
 ```python
 def lottery_by_set(numbers):
-    # 產生開獎號碼
     buyer_nums = set(numbers)
+    # 產生開獎號碼
     lottery_nums = set()
     while len(lottery_nums) < 6:
         lottery_nums.add(random.randint(1, 49))
@@ -155,8 +153,8 @@ def lottery_by_set(numbers):
 # Time Complexity of List Implementation
 ```python
 def lottery_by_list(numbers):
-    buyer_nums = list(numbers)   # 產生開獎號碼
-    lottery_nums = []
+    buyer_nums = list(numbers)   
+    lottery_nums = [] # 產生開獎號碼
     while len(lottery_nums) < 6:
         num = random.randint(1, 49)
         if num not in lottery_nums:
