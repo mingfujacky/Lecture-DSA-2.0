@@ -101,19 +101,21 @@ We can discuss how we measure the "cost" of our code to predict how its performa
 4. Practice data structures and algorithms
 5. Participate in programming challenges to test your skill and efficiency
 
-# Categorize Data Structures (1/2)
+# Logical Data Structures
 
 <div class="grid">
 
 <div>
 
-![w:100% categories data structure](asset/image/categorize_data_structures_2.png)
+![w:100% categories data structure](asset/image/logical_data_structure.jpg)
 
 </div>
 
 <div>
 
 <span class="small-text">
+
+> A **logical data structure** defines how data elements are conceptually related and behave, describing what data is needed instead of how it's stored
 
 > **Built-in / ADT**: 實作層級分類 
    - Built-in：Python 已提供的內建資料型別
@@ -128,7 +130,29 @@ We can discuss how we measure the "cost" of our code to predict how its performa
 
 </div>
 
-# Categorize Data Structures (2/2)
+# Physical Data Structures
+
+<div class="grid">
+
+<div>
+
+![w:100% categories data structure](asset/image/physical_data_structure.jpg)
+
+</div>
+
+<div>
+
+<span class="small-text">
+
+> A **physical data structure** is the concrete, low-level implementation of a logical data structure, defining exactly how data is stored in computer memory or in disk.
+
+</span>
+
+</div>
+
+</div>
+
+# How Could You Not Love Data Structures?
 ![w:900 categories data structure](asset/image/categorize_data_structures_1.png)
 
 # Why Should I Care About Data Structure
@@ -176,7 +200,7 @@ def lottery_by_list(numbers):
 # 與資料結構最常見對應的演算法
 ![w:900 categories data structure](asset/image/algorithms_by_data_structure.png)
 
-# 演算法設計範式
+# 演算法常用的設計模式
 ![w:900 categories data structure](asset/image/algorithms_by_設計範式.png)
 
 # Why Should I Care About Algorithms
@@ -211,6 +235,16 @@ def binary_search(arr, x):
 ```
 搜尋的時間複雜度: O(log n) 隨著資料量增加，時間對數增加
 
+# 演算法特性
+
+> 根據 Donald Ervin Knuth 的《電腦程式設計藝術》(The Art of Computer Programming)一書，演算法須符合以下五個條件
+- 輸入 (Input)：演算法需要零個或以上的輸入資料，這些資料需要有明確的定義。
+- 輸出 (Output)：演算法必須產生一個或以上的輸出結果，作為計算的最終產物。
+- 明確性 (Definiteness)：演算法的每個步驟都必須清晰、無歧義，確保執行結果是確定的。
+- 有限性 (Finiteness)：演算法必須在有限的步驟內結束，不能無限循環。
+- 有效性 (Effectiveness / Feasibility)：演算法中的所有操作都必須是基本、可實現的，並能在有限次內完成。
+> 演算法可以用程式碼、虛擬碼、流程圖、文字、表格、圖形等來描述
 
 # A Mental Model for Applying Data Structures
 ![bg right:50% w:80% apply data structure](asset/image/a_mental_model_for_applying_data_structures.png)
+
