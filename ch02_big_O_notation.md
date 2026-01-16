@@ -51,14 +51,19 @@ style: |
     font-size: 0.75rem;
   }
 ---
-# Big-O Notation
-- A framework to measure algorithm performance 
+# Evaluate Algorithms Performance
+- 為何需要評估演算法速度效能?
+  - A problem could be solved by many algorithms. Choose the most efficient one
+  - Predict the performance variation of an algorithm when input size increases
+- 評估方式
+  - 事後統計方法 - Profiling: implement algorithm, prepare test data and run code
+  - 事前分析估算方法 - Asymptotic analysis(漸近分析): find mathematical formulas that describe how an algorithm behaves as a function of its input. The formulas are expressed in Big-O notation
+
+# Big O Notation   
+- A framework to measure algorithm performance using asymptotic analysis
 - Measure terms
   - Time complexity
   - Memory space complexity
-- Measure methods
-  - Profiling (效能分析): implement algorithms and run code
-  - Asymptotic analysis (漸近分析): find mathematical formulas that describe how an algorithm behaves as a function of its input
 
 # Profiling 效能分析
 ```python
@@ -119,19 +124,37 @@ for i in range(1, n+1):
 ```
 $\sum_{i=1}^{n} \sum_{j=i+1}^{n} 1$ = $\sum_{i=1}^{n} (n-(i+1)+1)$ = $\sum_{i=1}^{n} (n-i)$ = n(n-1)/2 ~~ O(n²)
 
+# Lab - Calculate Operations
+```python
+def foo(n):
+    count = 1
+    times = 0
+    while count < n:
+      count = count * 2
+      times = times + 1
+    return times
+```
+```python
+def bar(n, m):
+    for i in range(n):
+        for j in range(m):
+            print(f'{i} * {j} = {i*j}')
+```
+
+
 # Big-O Definition
 - f(n) is a function of algorithm's running time, n is input size
 - f(n)取 Big-O, 符號為O(g(n)), 當n夠大的時候, g(n)的常數倍是f(n)的上限
 - 4n + 12 = O(n), 因為存在 c=5, n0=12, 使得當 n >= 12 後, 4n + 12 <= 5n
 - **f(n)=O(n²)**, means f(n) 屬於 O(n²) class
-- Big-O表示法中，我們會瞭解對演算法的時間複雜度而言，在乎的是輸入資料n大的時候，執行該演算法所需時間的成長趨勢的量級；至於執行哪些指令細節是不在乎的
+- Big-O表示法中，我們會瞭解對演算法的時間複雜度而言，在乎的是輸入資料n大的時候，執行該演算法所需時間的成長趨勢的<span class="red-text">數量級</span>；至於執行哪些指令細節是不在乎的
 ![bg right:40% w:100%](https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi4uqif112vvw150wphsw.jpg)
 
 # Big-O Classify Growth Rate
 - Big-O notation is to **<u>classify</u>** algorithm's performance (complexity) grow as the <u>input size n</u> grows.
 
 <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1657289969914/jdsAxrEyZ.JPG?auto=compress,format&format=webp" width="2000">
-O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2^n) < O(n!)
+O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2<sup>n</sup>) < O(n!)
 
 # Four Rules to Find Big-O of an Algorithm
 - Rule 1: Worst case
@@ -209,9 +232,9 @@ Worst|O(n) (target is last or not found)
   – O(2<sup>n</sup>): **exponential**, all subsets of an array
 
 # Lab
-- 比較 n\*\*3 與 2\*\*n 的成長速度, 當 n 增加時, 後者的值會比前者大?
+- 比較 n<sup>3</sup> 與 2<sup>n</sup> 的成長速度, 當 n 增加時, 後者的值會比前者大?
 
-- The following table shows the running time (in seconds) of 4 programs given different size of input(n). Determine the Big-O notation for each program.(O(1), O(log10 n), O(n), O(n²), O(n³), O(2^n))
+- The following table shows the running time (in seconds) of 4 programs given different size of input(n). Determine the Big-O notation for each program.(O(1), O(log10 n), O(n), O(n²), O(n³), O(2<sup>n</sup>))
 
 | n        | Program A | Program B | Program C | Program D |  
 |----------|-----------|-----------|-----------|-----------|
