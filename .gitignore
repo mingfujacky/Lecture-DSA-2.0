@@ -166,4 +166,4 @@ restricted/
 tmp/
 test/
 z_*.*
-.DS_Store
+.DS_Store.DS_Store
