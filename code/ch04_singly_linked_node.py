@@ -1,7 +1,4 @@
 class SinglyLinkedNode:
-    """
-    A singly linked list node
-    """
     def __init__(self, data, next_node=None):
         self._data = data
         self._next = next_node
@@ -15,10 +12,6 @@ class SinglyLinkedNode:
     def next(self):
         """Allows access to the next node via 'node.next'."""
         return self._next
-
-    def has_next(self):
-        """Returns True if this node points to another node."""
-        return self._next is not None
 
     def append(self, next_node):
         """Explicitly assigns the next node in the sequence."""
@@ -38,9 +31,10 @@ class SinglyLinkedNode:
         current = self
         elements = []
         while current:
-            elements.append(str(current.data)) # Note: using the @property here
-            current = current.next             # Note: using the @property here
+            elements.append(str(current.data))  # Note: using the @property here
+            current = current.next  # Note: using the @property here
         print(" -> ".join(elements) + " -> None")
+
 
 # --- Demo for Lecture ---
 node1 = SinglyLinkedNode(100)
@@ -49,7 +43,7 @@ node2 = SinglyLinkedNode(200)
 # Linking using the explicit append function
 node1.append(node2)
 
-print(f"Node 1 data: {node1.data}")   # Accessing like a variable, not a function
+print(f"Node 1 data: {node1.data}")  # Accessing like a variable, not a function
 print(f"Node 1 next node address: {id(node1.next)}")
 print("Traversal:")
 node1.traverse()
