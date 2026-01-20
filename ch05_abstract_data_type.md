@@ -99,14 +99,7 @@ print('game over! total guesses: ', total_guess)
 ```
 
 # Implement Bag by Referential Array - List
-```python
-class Bag:
-    def __init__(self):
-        self._data = SinglyLinkedList()
+[code/ch05_bag_by_list.py](code/ch05_bag_by_list.py)
 
-    def insert(self, value):
-        self._data.insert_in_front(value)
-
-    def iterate(self):
-        return self._data.traverse()        
-```
+# Implement Bag by Singly Linked List
+[code/ch05_bag_by_singly_linked_list.py](code/ch05_bag_by_singly_linked_list.py)

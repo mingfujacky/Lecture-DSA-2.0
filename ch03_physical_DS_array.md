@@ -155,3 +155,6 @@ for _ in range(32):
     my_list.pop()
     print(f"Length: {len(my_list)}, Size in bytes: {sys.getsizeof(my_list)}")
 ```
+
+# Array Applications
+[code/ch03_array_applications.ipynb](code/ch03_array_applications.ipynb)

@@ -95,7 +95,19 @@ style: |
 # Implement Singly Linked Node
 [ch04_singly_linked_node.py](code/ch04_singly_linked_node.py)
 
-# Design Singly Linked List (SLL)
+# Singly Linked List (SLL)
+<div class="columns">
+    <img src="asset/image/singly_linked_list_intro.png">
+</div>
+
+- Head node
+  - First element of a linked list, no other node points to it
+  - Use a variable point to the head node
+- Tail node
+  - Last element of the list, not point to next node, point to Null (None)
+- Each node only knows its successor
+
+# Design SLL
 ![bg right 40% w 80%](asset/image/singly_linked_list_diagram.jpg)
 - Do not need specify a initial size
 - Do not need same data type
@@ -105,68 +117,55 @@ style: |
   - Search by value
   - Get by index
   - Traverse
-# Implement Singly Linked List (SLL)
+
+# SLL - Insert
+<div class="columns">
+    <img src="asset/image/singly_linked_list_insert_at_the_end.png">
+    <img src="asset/image/singly_linked_list_insert_in_front.png">
+</div>
+
+# SLL - Search
+<div class="columns">
+    <img src="asset/image/singly_linked_list_search.png">
+</div>
+Time complexity O(n)
+
+# SLL - Delete
+<div class="columns">
+    <img src="asset/image/singly_linked_list_delete_1.png">
+    <img src="asset/image/singly_linked_list_delete_2.png">
+</div>
+
+- when we want to delete 7, how to do?
+- when we want to delete 9, we can not just search 9, why?
+- if we need delete the middle node, how to do
+- if we need delete the first node, how to do?
+- if we need delete the last node, how to do
+- What is the time complexity Big-O?
+
+# Implement Singly Linked List
 [ch04_singly_linked_list.py](code/ch04_singly_linked_list.py)
 
 # Design Doubly Linked Node
 ![bg right 10% w 80%](asset/image/doubly_linked_node_diagram.jpg)
 
 # Implement Doubly Linked Node
-```python
-class DoublyLinkedNode:
-    def __init__(self, data):
-        self._data = data
-        self._next = None
-        self._prev = None
-        
-    @property
-    def data(self):
-        return self._data
+[ch04_doubly_linked_node.py](code/ch04_doubly_linked_node.py)
 
-    @property
-    def next(self):
-        return self._next
-    
-    @property
-    def prev(self):
-        return self._prev
+# Doubly Linked List (DLL)
+<div class="columns">
+    <img src="asset/image/singly_linked_list_example.png">
+    <img src="asset/image/doubly_linked_list_example.png">
+</div>
 
-    def __str__(self):
-        return str(self.data)
+- If we have two links in a single node of the list, we can reach any other node in the list, both before and after it.
+- Weak points
+  - Each node of a DLL takes up more space than SLL.
+  - Each node insertion or deletion action, we need update two links.
 
-    def __repr__(self):
-        return f"DoublyLinkedNode(data:{self._data}, id:{id(self)}, previous node id:{id(self._prev) if self._prev else None}, next node id:{id(self._next) if self._next else None})"
- 
-    def append(self, next_node):  # append a node to the current one
-        self._next = next_node
-        if next_node is not None:
-            next_node._prev = self
-
-    def prepend(self, prev_node):  # prepend a node to the current one.
-        self._prev = prev_node
-        if prev_node is not None:
-            prev_node._next = self
-            
-    def traverse(self):
-        current = self
-        elements = []
-        while current:
-            elements.append(str(current.data))
-            current = current.next       
-        print(" None <- " + " <-> ".join(elements) + " -> None")
-        
-if __name__ == "__main__":
-    # Example usage of the DoublyLinkedNode class
-    node1 = DoublyLinkedNode(100)
-    node2 = DoublyLinkedNode(200)
-    node3 = DoublyLinkedNode(300)
-    node1.append(node2)  # Link node1 to node2
-    node3.prepend(node2)  # Link node3 back to node2
-    print(f"Node 1 data: {node1.data}")   # Accessing like a variable, not a function
-    print(repr(node1))
-    print(f"Node 1 next node address: {id(node1.next)}")
-    print(f"Node 2 prev node address: {id(node2.prev)}")
-    print("Traversal:")
-    node1.traverse()        
-```
-
+# DLL - Insert
+  <div class="columns">
+      <img src="asset/image/double_linked_list_insert_at_front.png">
+      <img src="asset/image/double_linked_list_insert_at_end.png">
+      <img src="asset/image/double_linked_list_insert_in_middle.png">
+  </div>

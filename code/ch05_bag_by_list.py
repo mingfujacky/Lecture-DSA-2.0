@@ -2,11 +2,12 @@ class Bag:
     """
     ADT Bag implemented using Python list. Order of elements is not guaranteed.
     """
-    def __init__(self, items = None):
+
+    def __init__(self, items=None):
         self._data = []
         if items is not None:
             for item in items:
-                self._data.append(item)       
+                self._data.append(item)
 
     def insert(self, item):
         self._data.append(item)
@@ -36,9 +37,9 @@ class Bag:
 
     def traverse(self):
         if self is not None:
-            return ' '.join(self._data)
+            return " ".join(self._data)
         else:
-            return 'Bag is empty'
+            return "Bag is empty"
 
     def __str__(self):
         return f"{self._data}"
@@ -66,4 +67,4 @@ if __name__ == "__main__":
     print("Traverse return:", b.traverse())
 
     b.clear()
-    print("After clear:", b, "empty?", b.is_empty())
+    print("After clear: empty?", b.is_empty())
