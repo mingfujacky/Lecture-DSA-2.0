@@ -12,6 +12,10 @@ class SinglyLinkedNode:
     def next(self):
         """Allows access to the next node via 'node.next'."""
         return self._next
+    
+    @next.setter
+    def next(self, next_node):
+        self._next = next_node
 
     def append(self, next_node):
         """Explicitly assigns the next node in the sequence."""
@@ -36,16 +40,15 @@ class SinglyLinkedNode:
         print(" -> ".join(elements) + " -> None")
 
 
-# --- Demo for Lecture ---
-node1 = SinglyLinkedNode(100)
-node2 = SinglyLinkedNode(200)
+if __name__ == "__main__":
+    node1 = SinglyLinkedNode(100)
+    node2 = SinglyLinkedNode(200)
 
-# Linking using the explicit append function
-node1.append(node2)
+    node1.append(node2)
 
-print(f"Node 1 data: {node1.data}")  # Accessing like a variable, not a function
-print(f"Node 1 next node address: {id(node1.next)}")
-print("Traversal:")
-node1.traverse()
-print(node1)
-print(repr(node1))
+    print(f"Node 1 data: {node1.data}")  # Accessing like a variable, not a function
+    print(f"Node 1 next node address: {id(node1.next)}")
+    print("Traversal:")
+    node1.traverse()
+    print(node1)
+    print(repr(node1))
