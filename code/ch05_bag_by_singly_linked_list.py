@@ -1,6 +1,4 @@
-from ch04_singly_linked_node import SinglyLinkedNode as Node
 from ch04_singly_linked_list import SinglyLinkedList
-
 
 class Bag:
     """

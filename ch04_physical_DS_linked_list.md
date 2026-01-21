@@ -169,3 +169,6 @@ Time complexity O(n)
       <img src="asset/image/double_linked_list_insert_at_end.png">
       <img src="asset/image/double_linked_list_insert_in_middle.png">
   </div>
+
+# Linked List Applications
+[ch04_linked_list_applications](code/ch04_linked_list_applications.ipynb)

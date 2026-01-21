@@ -113,7 +113,7 @@ class SinglyLinkedList:
             raise ValueError("Delete on an empty list.")
         data = self._head.data
         self._head = self._head.next
-        return True
+        return data
 
     def delete_from_back(self):  # Delete the last node
         if self.is_empty():
