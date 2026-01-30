@@ -42,7 +42,7 @@ style: |
   }
 ---
 # Trees
-![bg right:50% w:90%](asset/image/tree_concept.png)
+![bg right:50% w:90%](asset/image/general_tree_concept.png)
 - A generic **tree** is a non-linear data structure that consists of nodes connected by links. 
 - Each node contains a value and a number of links to other nodes, from zero to some number k (k-ary tree)
 
@@ -60,7 +60,7 @@ style: |
 - Subtree: a portion of the tree containing a node R and all the descendants of R.
 - Height: the length of the longest path from the root to a leaf
 <div class="middle-grid">
-    <img src="asset/image/tree_terminology.png">
+    <img src="asset/image/general_tree_terminology.png">
 </div>
 
 # Terminology of Tree (3/3)
@@ -76,4 +76,25 @@ style: |
 [W3Schools](https://www.w3schools.com/dsa/dsa_theory_trees.php)
 
 # Compare Linked List to Trees
-![](asset/image/tree_compart_linked_list.png)
+![](asset/image/general_tree_compart_linked_list.png)
+
+# Design General Tree Node
+![w:500 tree node diagram](asset/image/general_tree_node_diagram.png)
+[code/ch08_general_tree_node.py](code/ch08_general_tree_node.py)
+
+# ADT: Tree
+![w:700 tree node diagram](asset/image/general_tree_diagram.png)
+[code/ch08_general_tree.py](code/ch08_general_tree.py)
+
+# Tree Traversal Techniques
+- 深度優先走訪 (Depth-First Search, DFS), 盡可能深地探索每一條分支，再 Backtrack
+    - 前序走訪 (Pre-order): 根 -> 左子樹 -> 右子樹。
+    - 中序走訪 (In-order): 左子樹 -> 根 -> 右子樹。
+    - 後序走訪 (Post-order): 左子樹 -> 右子樹 -> 根。
+- 廣度優先走訪 (Breadth-First Search, BFS):  由上至下、由左至右逐層訪問節點
+
+<div class="columns">
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250913162631210745/tree_traversal_techniques.webp">
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250913162554418810/tree_construction_from_given_inorder_and_preorder_traversals_8.webp">
+</div>
+
