@@ -82,7 +82,7 @@ style: |
 ![w:500 tree node diagram](asset/image/general_tree_node_diagram.png)
 [code/ch08_general_tree_node.py](code/ch08_general_tree_node.py)
 
-# ADT: Tree
+# ADT: (General) Tree
 ![w:700 tree node diagram](asset/image/general_tree_diagram.png)
 [code/ch08_general_tree.py](code/ch08_general_tree.py)
 
@@ -98,3 +98,7 @@ style: |
     <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250913162554418810/tree_construction_from_given_inorder_and_preorder_traversals_8.webp">
 </div>
 
+# LeetCode 589: N-ary Tree Preorder Traversal
+Parse an N-ary tree described as [1, None, 3, 2, 4, None, 5, 6] and return the preorder traversal of its nodes' values.
+
+[ch08_nary_tree_leetcode_589.py](code/ch08_nary_tree_leetcode_589.py)
