@@ -42,31 +42,55 @@ style: |
   }
 ---
 # Graphs
-A Graph is a non-linear data structure that consists of vertices (nodes) and edges.
-- Vertices (or nodes) represent entities or data points.
-- Edges represent the relationships or connections between these entities.
-<div class="columns">
+- A Graph is a non-linear data structure that consists of vertices (nodes) and edges.It is a powerful tool for modeling complex networks like social media connections, transportation routes, or web page links.
+- A graph $G$ is formally defined as a pair $(V, E)$, where:
+  - Vertices ($V$)(or nodes) represent entities or data points.
+  - Edges ($E$) represent the relationships or connections between these entities.
+<div class="middle-grid">
     <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200630111809/graph18.jpg">
 </div>
 
-# Graph Properties
-- A **weighted** Graph is a Graph where the edges have values.
-- A **connected** Graph is when all the vertices are connected through edges.
-- A **directed** Graph is when the edges between the vertex pairs have a direction.
-- A **cyclic** Graph is defined differently depending on whether it is directed or not:
-  - A **directed cyclic** Graph is when you can follow a path along the directed edges that goes in circles.
-  - An **undirected cyclic** Graph is when you can come back to the same vertex you started at without using the same edge more than once.
-- A **loop**, also called a self-loop, is an edge that begins and ends on the same vertex.
-- Degree of a vertex is the number of edges connected to it. In a directed Graph, we have in-degree and out-degree.
+# Key Terminology
+- Adjacency: Two nodes are "adjacent" if there is an edge connecting them directly.
+- Degree: The total number of edges connected to a specific vertex.
+- Path: A sequence of edges that allows you to travel from one node to another.
+- Cycle: A path that starts and ends at the same vertex.
+- Loop (self-loop): An edge that begins and ends on the same vertex.
+
+# Types of Graphs
+- Undirected: Edges have no direction; the relationship is mutual (eg, friendship).
+- Directed: Edges have arrows indicating a one-way relationship (eg, following on X).
+- Weighted: Each edge has a numerical value or "cost" (eg, distance between cities).
+- Unweighted: All edges are considered equal; there are no values assigned to the links.
+- Connected: There is a path between every pair of vertices in the graph.
+- Complete: Every pair of distinct vertices is connected by a unique edge.
+- Directed cyclic: follow a path along the directed edges that goes in circles.
+- Undirected cyclic: come back to the same starting vertex without using the same edge more than once.
+- Acyclic: Does not contain any cycles.
+
 [W3 School: Graph properties](https://www.w3schools.com/dsa/dsa_theory_graphs.php)
 
 # Graph Representation
-- **Adjacency Matrix**: a 2D array where the cell at row i and column j indicates the presence (and possibly weight) of an edge between vertex i and vertex j.
-- **Adjacency List**: an array of lists where each list corresponds to a vertex and contains a list of its adjacent vertices (and possibly weights).
+- **Adjacency Matrix**: A 2D array (table) where a $1$ or a weight indicates a connection between row $i$ and column $j$, and a $0$ indicates no connection.
+- **Adjacency List**: An array of lists, where each index represents a node and contains a list of all other nodes it is connected to. This is generally more memory-efficient for "sparse" graphs (those with few edges).
 <div class="columns">
     <img src="asset/image/graph_adjacency_matrix_representation.png">
     <img src="asset/image/graph_adjacency_list_representation.png">
 </div>
+
+# Real-World Applications
+- Social Networks: Suggesting friends based on mutual connections.
+- Google Maps: Finding the shortest path between two locations.
+- Recommendation Engines: Linking products to users based on purchase history.
+- Web Crawling: Following links from one page to another to index the internet.
+
+# Design Graph Vertex
+![w:700 tree node diagram](asset/image/graph_vertex_diagram.png)
+[code/ch10_graph_vertex.py](code/ch10_graph_vertex.py)
+
+# ADT - Graph
+![w:700 graph diagram](asset/image/graph_diagram.png)
+[code/ch10_graph.py](code/ch10_graph.py)
 
 # Graph Traversal Algorithms
 
