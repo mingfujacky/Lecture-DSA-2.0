@@ -92,52 +92,51 @@ style: |
 ![w:700 graph diagram](asset/image/graph_diagram.png)
 [code/ch10_graph.py](code/ch10_graph.py)
 
-# Graph Traversal Algorithms
+# Graph Applications
+- Graph traversal: BFS(breadth-first search) and DFS(depth-first search)
+- Minimum cost spanning tree (MCST): Kruskal's algorithms
+- Shortest Path: Dijkstra's algorithms
 
-# Binary Tree Types
-- Full Binary Tree: every node other than the leaves has two children.
-- Perfect Binary Tree: all internal nodes have two children and all leaves are at the same level.
-- Complete Binary Tree: all levels are completely filled except possibly the last level, and the last level has all keys as left as possible.
-- Balanced Binary Tree: a binary tree in which the height of the two subtrees of any node never differ by more than one.
-- Degenerate and Skewed Tree: each parent node has only one child. Such trees behave like linked lists.
+# Graph Traversal Algorithms - BFS
+> BFS explores the neighbor nodes first, before moving to the next level neighbors, essentially exploring the graph "layer by layer."
+- Data structure: use a Queue to manage the discovery order
+- Visitation tracking: use a Visited Set (or array) to keep track of nodes already processed, preventing infinite loops in graphs with cycles.
+- The Process:
+  - Push the starting node into the queue and mark it as visited.
+  - While the queue is not empty:
+    - Dequeue a node from the front.
+    - Check all its unvisited neighbors.
+    - Mark each neighbor as visited and enqueue them.
 
-# Binary Tree Illustration
-![w:800 types of binary trees](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*cfgc3gvJ4cJiFB9G.png)
+# BFS Illustration
+[BFS illustration](https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph)
+[ch10_graph_bfs.py](code/ch10_graph_bfs.py)
+![w:500 Input graph](asset/image/graph_bfs_input.png)
 
-# Binary Tree Properties
-- The max number of nodes at level 'l' of a binary tree is 2<sup>l</sup>, where root is at level 0.
-- The max number of nodes in a binary tree of height 'h' is 2<sup>(h+1)</sup> - 1.
-- In a binary tree, n<sub>0</sub> = n<sub>2</sub> + 1, where n<sub>0</sub> is the number of leaf nodes and n<sub>2</sub> is the number of nodes with two children.
-- With 'n' nodes, the min possible height is ⌈log2(n + 1)⌉ − 1 under complete or perfect binary tree
-- In a complete binary tree, given a node with an index i > 0, its parent’s index is (i - 1) // 2, and its children's indexes are (2 * i + 1) and (2 * i + 2)
+# Graph Traversal Algorithms - DFS
+> DFS explores as far as possible along each branch before backtracking. 
+- Data structure: uses a stack (can be implemented using recursion).
+- Visitation tracking: use a Visited Set (or array) to keep track of nodes already processed preventing infinite loops in graphs with cycles.
+- The Process:
+  - Start at a node and mark it as visited.
+  - Look at all unvisited neighbors of the current node.
+  - Pick one neighbor and immediately jump into it (recursive call) to explore its branch.
+  - If a node has no more unvisited neighbors, backtrack to the previous node and continue.
 
-# Design Binary Tree Node
-![w:500 binary tree node diagram](asset/image/binary_tree_node_diagram.png)
-[code/ch09_binary_tree_node.py](code/ch09_binary_tree_node.py)
+# DFS Illustration
+[DFS illustration](https://www.geeksforgeeks.org/dsa/depth-first-search-or-dfs-for-a-graph/)
+[ch10_graph_dfs.py](code/ch10_graph_dfs.py)
+![w:500 Input graph](asset/image/graph_dfs_input.png)
 
-# ADT - Binary Tree
-![w:500 binary tree diagram](asset/image/binary_tree_diagram.png)
-[code/ch09_binary_tree.py](code/ch09_binary_tree.py)
+# Minimum Cost Spanning Tree (MCST)
+> MCST is a subset of edges in a connected, weighted graph that connects all vertices together without any cycles and with the minimum possible total edge weight.
+- Kruskal's Algorithm is a "Greedy" approach to finding this tree.
+  - Sort edges: sort all edges in the graph by their weight in ascending order.
+  - Pick edges: iterate through the sorted list and pick the edge with the smallest weight.
+  - Cycle detection: if adding the edge connects two vertices that are in different sets, add it to the MST and merge the sets. If the vertices are already in the same set, discard the edge (as it would form a cycle).
+  - Termination: stop when there are \(V-1\) edges in the MST (where \(V\) is the number of vertices). 
 
-# Binary Tree Applications:
-- **Huffman Coding Trees**: used in data compression algorithms.
-- **Binary Search Trees (BST)**: used for efficient searching and sorting.
-- **Heaps**: used in priority queues and heap sort algorithms.
-
-[![Huffman Coding Trees](https://i.ytimg.com/vi/6K4aZiwq1Jk/hqdefault.jpg)](https://youtu.be/6K4aZiwq1Jk?si=rapnCX5zd5iqOW_a)
-
-# Huffman Coding Tree Construction
-- Given the following characters and their frequencies, construct a Huffman coding tree: A: 45, B: 13, C: 12, D: 16, E: 9, F: 5
-- Steps to construct the tree:
-  1. Create a leaf node for each character and build a min-heap of all leaf nodes.
-  2. While there is more than one node in the heap:
-     - Extract the two nodes of the lowest frequency from the heap.
-     - Create a new internal node with these two nodes as children and with frequency equal to the sum of their frequencies.
-     - Insert the new node back into the heap.
-  3. The remaining node is the root of the Huffman tree.
-- Huffman codes: A: 0, B: 101, C: 100, D: 111, E: 1101, F: 1100
-
-# Huffman Coding Tree Visualization
-[![Huffman Coding Trees](https://i.ytimg.com/vi/d3gHFesPc_E/hqdefault.jpg)](https://youtu.be/d3gHFesPc_E?si=HaMDpkypz_8Anv1A)
-
-[code/ch09_huffman_coding_tree.py](code/ch09_huffman_coding_tree.py)
+# Kruskal's Algorithm Illustration
+[Kruskal's algorithm illustration](https://www.geeksforgeeks.org/dsa/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/)
+[ch10_graph_kruskal.py](code/ch10_graph_kruskal.py)
+![w:500 Input graph](asset/image/graph_mcst_kruskal_input.png)  
