@@ -68,7 +68,7 @@ style: |
 - Undirected cyclic: come back to the same starting vertex without using the same edge more than once.
 - Acyclic: Does not contain any cycles.
 
-[W3 School: Graph properties](https://www.w3schools.com/dsa/dsa_theory_graphs.php)
+[GeeksforGeeks: Graph properties](https://www.geeksforgeeks.org/dsa/graph-data-structure-and-algorithms/)
 
 # Graph Representation
 - **Adjacency Matrix**: A 2D array (table) where a $1$ or a weight indicates a connection between row $i$ and column $j$, and a $0$ indicates no connection.
@@ -95,7 +95,7 @@ style: |
 # Graph Applications
 - Graph traversal: BFS(breadth-first search) and DFS(depth-first search)
 - Minimum cost spanning tree (MCST): Kruskal's algorithms
-- Shortest Path: Dijkstra's algorithms
+- Shortest path: Dijkstra's algorithms
 
 # Graph Traversal Algorithms - BFS
 > BFS explores the neighbor nodes first, before moving to the next level neighbors, essentially exploring the graph "layer by layer."
@@ -140,3 +140,6 @@ style: |
 [Kruskal's algorithm illustration](https://www.geeksforgeeks.org/dsa/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/)
 [ch10_graph_kruskal.py](code/ch10_graph_kruskal.py)
 ![w:500 Input graph](asset/image/graph_mcst_kruskal_input.png)  
+
+# Shortest Path: Dijkstra's Algorithm
+> Shortest path problem is a core challenge in graph theory focused on finding the shortest paths from a single "source" node to all other reachable nodes in a graph.
