@@ -111,14 +111,18 @@ A binary search tree (BST) has some properties
 In BST, for any node N that stores a value v, all nodes in the left subtree of N will have values less than or equal to v, and all nodes in the right subtree of N will have values greater than v
 
 <div class="middle-grid">
-    <img src="asset/image/binary_tree_bst_order.png">
+    <img src="asset/image/bst_order.png">
 </div>
+
+# Design BST Node
+![w:500 binary tree node diagram](asset/image/bst_node_diagram.png)
+[code/ch09_bst_node.py](code/ch09_bst_node.py)
 
 # Find the Minimum and Maximum Elements in a BST
 - Get the maximum element, we start at the root and follow the links to the right children until we reach a node that has no right child. This node (which could be the root itself) stores the maximum value in the tree.
 - Get the minimum element, we start at the root and follow the links to the left children until we reach a node that has no left child.
 <div class="middle-grid">
-    <img src="asset/image/binary_tree_bst_min_max.png">
+    <img src="asset/image/bst_min_max.png">
 </div>
 
 
