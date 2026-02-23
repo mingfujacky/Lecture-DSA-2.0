@@ -50,10 +50,11 @@ style: |
 # [520009] 資料結構與演算法
 ## Data Structures and Algorithms (DSA)
 > 課程講師：林志偉 (jacky.jw.lin@nycu.edu.tw)
-> 課程助教：蔡孟哲 (aayy0917.sc13@nycu.edu.tw)
+> 課程助教：遴選中
 > 教材網站：https://github.com/mingfujacky/Lecture-DSA-2.0.git
-> 上課書籍：Python 資料結構 X 演算法 刷題鍛鍊班, 旗標出版社, 2022
-> 參考書籍：Marcello La Rocca, Grokking Data Structures, Manning, 2024
+> 上課書籍：Marcello La Rocca, Grokking Data Structures, Manning, 2024
+> 參考書籍：Python 資料結構 X 演算法 刷題鍛鍊班, 旗標出版社, 2022
+https://youtu.be/iqdzXaXhfQc?si=lvI9_4E8ChhEyQlY
 
 # 課程講師 - 林志偉 (Jacky Lin)
 > 現職: 陽明交通大學 / 學士後電子與光子學士學位學程 助理教授
@@ -83,7 +84,7 @@ style: |
 - (30%) 課後作業: 6次作業 (不受理遲交)
 - (20%) 期中考試
 - (20%) 期末考試
-- (20%) 期末專題: 期末考前一週進行口頭報告並繳交書面報告 (不受理遲交)
+- (20%) 期末專題: 期末考前一週進行口頭報告並上傳期末專題書面報告 (不受理遲交)
 > 除「成績計算」或「登錄」有誤外，請同學勿以個人理由請求調整成績
 
 # 期中期末考試試場規定
@@ -106,6 +107,10 @@ style: |
 
 參考題目集:
 https://www.techinterviewhandbook.org/grind75/
+>Grind75 是一份為技術面試準備所設計的精選演算法與資料結構題目清單。
+>它的核心概念是：與其刷幾百題，不如掌握最關鍵的 75 題。
+>這份清單由 Yangshun Tay（曾任職於 Meta）整理，目標是幫助求職者在有限時間內，有系統地準備演算法面試。
+
 
 # 授課大綱
 [114下學期](https://timetable.nycu.edu.tw/?r=main/crsoutline&Acy=114&Sem=2&CrsNo=520009&lang=zh-tw)
