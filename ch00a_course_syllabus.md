@@ -50,7 +50,7 @@ style: |
 # [520009] 資料結構與演算法
 ## Data Structures and Algorithms (DSA)
 > 課程講師：林志偉 (jacky.jw.lin@nycu.edu.tw)
-> 課程助教：遴選中
+> 課程助教：蔡孟哲 (aayy0917.sc13@nycu.edu.tw)
 > 教材網站：https://github.com/mingfujacky/Lecture-DSA-2.0.git
 > 上課書籍：Marcello La Rocca, Grokking Data Structures, Manning, 2024
 > 參考書籍：Python 資料結構 X 演算法 刷題鍛鍊班, 旗標出版社, 2022
