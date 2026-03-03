@@ -248,3 +248,20 @@ def binary_search(arr, x):
 # A Mental Model for Applying Data Structures
 ![bg right:50% w:80% apply data structure](asset/image/a_mental_model_for_applying_data_structures.png)
 
+# Recap
+- DSA 是程式運行的引擎，學習DSA能幫助我們寫出更高效的程式
+- DSA 包含資料結構和演算法兩大類，前者是資料的組織方式，後者是操作資料的步驟
+- 邏輯資料結構定義了資料元素的概念關係和行為，物理資料結構則是邏輯資料結構的具體實現
+- 不同的資料結構適合不同的演算法，選擇合適的資料結構可以提高程式的效率
+
+# Review Questions
+1. Which statement best describes the role of a data structure?
+(a) It defines how code is compiled.
+(b) It organizes and stores data efficiently for processing.
+(c) It ensures faster CPU performance.
+(d) It specifies how data is visualized.
+2. What is the primary purpose of an algorithm?
+(a) Display data visually
+(b) Organize user input
+(c) Provide step-by-step instructions to solve a problem
+(d) Format strings
