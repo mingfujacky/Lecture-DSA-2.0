@@ -145,9 +145,9 @@ def bar(n, m):
 # Big-O Definition
 - f(n) is a function of algorithm's running time, n is input size
 - f(n)取 Big-O, 符號為O(g(n)), 當n夠大的時候, g(n)的常數倍是f(n)的上限
-- 4n + 12 = O(n), 因為存在 c=5, n0=12, 使得當 n >= 12 後, 4n + 12 <= 5n
+- 4n + 12 = O(n), 因為存在 c=5, n<sub>0</sub>=12, 使得當 n >= 12 後, 4n + 12 <= 5n
 - **f(n)=O(n²)**, means f(n) 屬於 O(n²) class
-- Big-O表示法中，我們會瞭解對演算法的時間複雜度而言，在乎的是輸入資料n大的時候，執行該演算法所需時間的成長趨勢的<span class="red-text">數量級</span>；至於執行哪些指令細節是不在乎的
+- Big-O表示法中，我們會瞭解對演算法的時間複雜度而言，在乎的是輸入資料的數量很大的時候，執行該演算法所需時間的成長趨勢的<span class="red-text">數量級</span>；至於執行哪些指令細節是不在乎的
 ![bg right:40% w:100%](https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi4uqif112vvw150wphsw.jpg)
 
 # Big-O Classify Growth Rate
@@ -167,8 +167,8 @@ m = 9  # 1 op
 for i in range(n):         # Outer loop: n ops
     for j in range(m):     # Inner loop: m ops
         print(i, j)        # 1 op
-# The summary of ops is n * (1 + (2 * m)) + 2. 
-# The algorithm is  O(n + 2 * n * m + 2), n and m represent independent inputs. 
+# The summary of ops is n * (1 * m) + 2. 
+# The algorithm is  O(n * m), n and m represent independent inputs. 
 ```
 - Rule 4: Drop nondominant terms: We will get O(n * m)
 **[Question]** Find Big O of an algorithm having time complexity 20n³ + 5n + 7 => O(n³)
