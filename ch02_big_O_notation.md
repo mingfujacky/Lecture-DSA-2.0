@@ -204,7 +204,7 @@ def binary_search(self, target):
     return None                             # 1 op
 ```
 - The formula for the running time of binary search is
-  T(n) = 2 + log<sub>2</sub>n*(6) + 1 = log<sub>2</sub>6n + 3 = O(log<sub>2</sub>n)
+  T(n) = 2 + log<sub>2</sub>n*(5) + 1 = log<sub>2</sub>5n + 3 = O(log<sub>2</sub>n)
 
 # Another 2 Notation of Algorithm Complexity
 Case Type|Description|Notation
@@ -241,3 +241,16 @@ Worst|O(n) (target is last or not found)
 | 10       | 1000      | 10        | 100       | 500       |
 | 20       | 1001      | 40        | 200       | 650       |
 | 100      | 1000      | 1000      | 1000      | 1000      |
+
+# Review Questions
+1.	What does Big-O notation describe?
+A. The syntax of Python
+B. Memory content of variables
+C. Performance growth as input size increases
+D. Runtime errors
+
+2.	If T(n) = 0.5 * n³ + 10 * n² + 19 * n + 2000, what’s its Big-O?
+A. O(1)
+B. O(n) 
+C. O(n²) 
+D. O(n³)

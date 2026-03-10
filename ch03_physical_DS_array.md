@@ -128,10 +128,10 @@ for _ in range(32):
 ```
 
 # Are Lists Arrays?
-- Lists aren’t arrays
+- In the traditional sense, a Python list is not a typical array. 
   - By default, arrays have a fixed length and an unique type
   - Lists are dynamic and can store elements of different types
-  - But, list is the typical go-to data type for Python programmers needing an array structure
+  - But, list is a go-to data type for Python programmers needing an array structure
 - List could be a referential array which doesn’t store actual values directly. Instead, it stores references (pointers) to objects in memory. That’s why lists can hold elements of different types and provide index-based access.
 - a = [10, 20, 'GfG', 40, True]
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250213130630102777/python-list.webp" width="300">
@@ -158,3 +158,16 @@ for _ in range(32):
 
 # Array Applications
 [code/ch03_array_applications.ipynb](code/ch03_array_applications.ipynb)
+
+# Review Questions
+1. What is not a characteristic of a static array?
+(a) Fixed memory size when created. 
+(b) Elements stored in continuous memory addresses. 
+(c) Can change its size dynamically. 
+(d) All elements are of the same data type.
+
+2. How to calculate the memory address of an element in an array?
+(a) [start_address] + ([index] * [size])
+(b) [start_address] + ([index] + [size])
+(c) [start_address] * ([index] * [size])
+(d) [start_address] * ([index] + [size])
