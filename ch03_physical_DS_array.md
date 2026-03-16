@@ -173,10 +173,15 @@ for _ in range(32):
 (d) [start_address] * ([index] + [size])
 
 # Homework DSA_HW_B
-Grind 75 (https://www.techinterviewhandbook.org/grind75/?grouping=topics)
+- 請完成下方所列的 Grind 75的題目，並於期限內繳交，請注意不受理逾期繳交 
+- Submit program and output together with file name 學號_姓名_DSA_HW_B.zip
+- Ensure the code is well-commented and test with multiple cases.
+- Grind 75 (https://www.techinterviewhandbook.org/grind75/?grouping=topics)
+  - Array # 1: Two Sum
+  - Array # 2: Best Time to Buy and Sell Stock
+  - Array # 3: Majority Element
+  - Array # 4: Contains Duplicate
+  - String # 1: Valid Palindrome
+  - String # 2: Valid Anagram
+  - String # 3: Longest Palindrome
 
-Array # 1: Two Sum
-Array # 2: Best Time to Buy and Sell Stock
-Array # 3: Majority Element
-Array # 4: Contains Duplicate
-String # 1: Valid Palindrome
