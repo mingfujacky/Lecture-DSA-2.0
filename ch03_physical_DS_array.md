@@ -171,3 +171,12 @@ for _ in range(32):
 (b) [start_address] + ([index] + [size])
 (c) [start_address] * ([index] * [size])
 (d) [start_address] * ([index] + [size])
+
+# Homework DSA_HW_B
+Grind 75 (https://www.techinterviewhandbook.org/grind75/?grouping=topics)
+
+Array # 1: Two Sum
+Array # 2: Best Time to Buy and Sell Stock
+Array # 3: Majority Element
+Array # 4: Contains Duplicate
+String # 1: Valid Palindrome
