@@ -234,7 +234,7 @@ Worst|O(n) (target is last or not found)
 # Lab
 - 比較 n<sup>3</sup> 與 2<sup>n</sup> 的成長速度, 當 n 增加時, 後者的值會比前者大?
 
-- The following table shows the running time (in seconds) of 4 programs given different size of input(n). Determine the Big-O notation for each program.(O(1), O(log10 n), O(n), O(n²), O(n³), O(2<sup>n</sup>))
+- The following table shows the running time (in seconds) of 4 programs given different size of input(n). Determine the Big-O notation for each program.(O(1), O(log<sub>10</sub> n), O(n), O(n²), O(n³), O(2<sup>n</sup>))
 
 | n        | Program A | Program B | Program C | Program D |  
 |----------|-----------|-----------|-----------|-----------|
