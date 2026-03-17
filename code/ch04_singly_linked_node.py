@@ -12,7 +12,7 @@ class SinglyLinkedNode:
     def next(self):
         """Allows access to the next node via 'node.next'."""
         return self._next
-    
+
     @next.setter
     def next(self, next_node):
         self._next = next_node
