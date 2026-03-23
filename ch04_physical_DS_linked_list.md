@@ -172,3 +172,22 @@ Time complexity O(n)
 
 # Linked List Applications
 [ch04_linked_list_applications](code/ch04_linked_list_applications.ipynb)
+
+# Recap
+- Linked storage structure uses references (links or pointers) to connect individual data records (nodes), rather than storing them in contiguous memory locations like an array.
+- Linked list is a linear data structure where each node contains a data part and a link to the next node. 
+- Linked list don't need allocate space in advance and copy data when add elements, but has no direct indexing.
+- Access an element in array and linked list is O(1) and O(n), respectively. Insert an element in array and linked list is O(n) and O(1), respectively. Delete an element in array and linked list is O(n) and O(1), respectively.
+- Singly linked list (SLL) has only one link in each node, while doubly linked list (DLL) has two links in each node, allowing bidirectional traversal.
+
+# Review Questions
+1.	Which of the following best describes a singly linked list? 下列哪一項最能描述singly linked list？
+A. Stores elements contiguously 儲存元素為連續記憶體
+B. Each node points to its successor 每個節點指向其後繼節點
+C. Allows direct indexing 可直接索引
+D. Allows bidirectional traversal 可雙向遍歷
+2.	What is the time complexity of searching a value in an unsorted singly linked list? 在未排序的singly linked list中搜尋值的時間複雜度為何?
+A. O(1)
+B. O(log n)
+C. O(n log n)
+D. O(n)

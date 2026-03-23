@@ -159,6 +159,11 @@ for _ in range(32):
 # Array Applications
 [code/ch03_array_applications.ipynb](code/ch03_array_applications.ipynb)
 
+# Recap
+- Sequential storage structure stores data elements in physically contiguous memory locations.
+- Arrays are a common implementation of sequential storage structures, characterized by fixed size, contiguous memory allocation, and direct indexing.
+- Python lists and arrays automatically handle resizing, allowing for dynamic growth as needed.
+
 # Review Questions
 1. What is not a characteristic of a static array?
 (a) Fixed memory size when created. 

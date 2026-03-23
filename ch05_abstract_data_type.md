@@ -103,3 +103,24 @@ print('game over! total guesses: ', total_guess)
 
 # Implement Bag by Singly Linked List
 [code/ch05_bag_by_singly_linked_list.py](code/ch05_bag_by_singly_linked_list.py)
+
+# Recap
+- Abstract data type (ADT) is a theoretical concept that describes at a high level how data can be organized and the operations that can be performed on the data.
+- Data structure is how data is organized in memory and the internal representation details of the DS
+- Implementation is to choose a programming language and translate the DS into code.
+- We can realize different applications by using the same ADT.
+- We can use different data structures (array, linked list) to implement the same ADT
+- We can also use different implementations (Python, Java) for the same data structure.
+
+# Review Questions
+1. Which of the following best describes an Abstract Data Type (ADT)?
+A. A specific way of storing data in memory using arrays or linked lists
+B. A programming language implementation of a data structure
+C. A model that defines data by its behavior and operations
+D. A hardware-level representation of data
+
+2. Which of the following is NOT a property of a Bag ADT?
+A. Items have no specific order
+B. Duplicate items are allowed
+C. Items must be stored in sorted order
+D. Items can be of different types
