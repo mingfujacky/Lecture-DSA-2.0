@@ -124,3 +124,15 @@ A. Items have no specific order
 B. Duplicate items are allowed
 C. Items must be stored in sorted order
 D. Items can be of different types
+
+# Homework DSA_HW_C
+- 請完成下方所列的 Grind 75的題目，並於期限內繳交，請注意不受理逾期繳交 
+- Submit program and output together with file name 學號_姓名_DSA_HW_C.zip
+- Ensure the code is well-commented and test with multiple cases.
+- Grind 75 (https://www.techinterviewhandbook.org/grind75/?grouping=topics)
+  - Linked List # 1: Merge Two Sorted Lists
+  - Linked List # 2: Linked List Cycle
+  - Linked List # 3: Reverse Linked List
+  - Linked List # 4: Middle of the Linked List
+  - Binary Search # 1: Binary Search
+  - Binary Search # 2: Find Bad Version
