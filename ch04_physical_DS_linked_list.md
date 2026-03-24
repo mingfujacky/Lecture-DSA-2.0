@@ -177,7 +177,6 @@ Time complexity O(n)
 - Linked storage structure uses references (links or pointers) to connect individual data records (nodes), rather than storing them in contiguous memory locations like an array.
 - Linked list is a linear data structure where each node contains a data part and a link to the next node. 
 - Linked list don't need allocate space in advance and copy data when add elements, but has no direct indexing.
-- Access an element in array and linked list is O(1) and O(n), respectively. Insert an element in array and linked list is O(n) and O(1), respectively. Delete an element in array and linked list is O(n) and O(1), respectively.
 - Singly linked list (SLL) has only one link in each node, while doubly linked list (DLL) has two links in each node, allowing bidirectional traversal.
 
 # Review Questions
