@@ -101,8 +101,91 @@ print('game over! total guesses: ', total_guess)
 # Implement Bag by Referential Array - List
 [code/ch05_bag_by_list.py](code/ch05_bag_by_list.py)
 
+# Lab of Bag by List
+```python
+class Bag:
+    def __init__(self, items=None):
+        self._data = XX
+        if items is not None:
+            for item in items:
+                self._data.append(item)
+
+    def insert(self, item):
+        self._data.??????(item)
+        return True
+
+    def remove(self, item):
+        try:
+            self._data.remove(item)
+            return True
+        except ValueError:
+            return False
+
+    def clear(self):
+        self._data.?????()
+
+    def get_current_size(self):
+        return ???(self._data)
+
+    def is_empty(self):
+        return len(self._data) ?? 0
+
+    def get_frequency_of(self, item):
+        return self._data.count(item)
+
+    def contains(self, item):
+        return item ?? self._data
+
+    def traverse(self):
+        if self is not None:
+            return " ".join(self._data)
+        else:
+            return "Bag is empty"
+
+```
+
+
 # Implement Bag by Singly Linked List
 [code/ch05_bag_by_singly_linked_list.py](code/ch05_bag_by_singly_linked_list.py)
+
+# Lab of Bag by Singly Linked List
+```
+from ch04_singly_linked_list import SinglyLinkedList
+
+class Bag:
+    """ ADT Bag implemented using singly linked list. Order of elements is not guaranteed"""
+
+    def __init__(self, items=None):
+        self._list = ????????????????()
+
+        if items is not None:
+            for item in items:
+                self.insert(item)
+
+    # -------- Insert / Remove / Clear --------
+    def insert(self, item):
+        self._list.insert_in_?????(item)
+        return True
+
+    def remove(self, item):
+        return self._list.?????(item)
+
+    def clear(self):
+        self._list._head = ????
+
+    # -------- Counting --------
+    def get_current_size(self):
+        return ???(self._list)
+
+    def get_frequency_of(self, item):
+        count = 0
+        current = self._list._head
+        while current is not None:
+            if current.data == item:
+                count += 1
+            current = current.????
+        return count
+```
 
 # Recap
 - Abstract data type (ADT) is a theoretical concept that describes at a high level how data can be organized and the operations that can be performed on the data.

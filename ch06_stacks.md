@@ -69,13 +69,71 @@ Stack follows LIFO rule, we design its interface with only two methods:
 # Implement by List
 [code/ch06_stack_list.py](code/ch06_stack_list.py)
 
+# Lab of Stack by List
+```
+class Stack:
+    def __init__(self):
+        self._data = ??
+
+    def __???__(self):
+        # Return the size of the stack.
+        return len(self._data)
+
+    def push(self, value):
+        # Add a new value to the stack.
+        self._data.?????(value)
+
+    def pop(self):
+        # Remove and return the last value added to the stack.
+        if self.is_empty():
+            raise ValueError("Cannot pop from an empty stack")
+        return self._data.???()
+
+    def peek(self):
+        # Return the last value added to the stack without removing it.
+        if self.is_empty():
+            raise ValueError("Cannot peek at an empty stack")
+        return self._data[??]
+```
+
 # Implement by SLL
 [code/ch06_stack_sll.py](code/ch06_stack_sll.py)
+
+# Lab of Stack by SLL
+```
+from ch04_singly_linked_list import SinglyLinkedList
+class Stack:
+    def __init__(self):
+        self._data = ????????????????()
+
+    def __len__(self):
+        # Return the size of the stack.
+        return len(self._data)
+
+    def is_empty(self):
+        return self._data.is_empty()
+
+    def push(self, value):
+        # Add a new value to the stack.
+        self._data.insert_in_?????(value)
+
+    def pop(self):
+        # Remove and return the last value added to the stack.
+        if self.is_empty():
+            raise ValueError("Cannot pop from an empty stack")
+        return self._data.delete_from_?????()
+
+    def peek(self):
+        # Return the last value added to the stack without removing it.
+        if self.is_empty():
+            raise ValueError("Cannot peek at an empty stack")
+        return self._data.?????.data
+```
 
 # Stack Application - Evaluating Expression
 - Infix notation: 3 + 2
 - Postfix notation: 3 2 +
-- In infix notation, 3 + 2 * 4 == 3 + (2 * 4) based on operator precedence, if we want to add 3 and 2 first, the formula will be (3 + 2) * 4
+- In infix notation, 3 + 2 * 4 => 3 + (2 * 4) based on operator precedence, if we want to add 3 and 2 first, the formula will be (3 + 2) * 4
 - In postfix notation, we use 3 2 4 * + and 3 2 + 4 * respectively
 
 <div class="columns">
@@ -126,3 +184,21 @@ table {
 - A stack is a ADT that abides by the LIFO policy.
 - Stacks provide two operations: push and pop. No other way to insert or delete elements, and search is generally not allowed.
 - A stack can be implemented using either arrays or linked lists to store its elements.
+
+# Review Questions
+1.	Which operations characterize a stack?
+下列何者為 Stack（堆疊）的操作特性？
+(a)Insert/Delete (b)Push/Pop (LIFO) (c)Enqueue/Dequeue (FIFO) (d)Sort/Merge
+
+2.	Given the following stack operations:
+以下堆疊操作的兩次 pop() 輸出為何？
+push(1), push(2), push(3), pop(), push(4), pop()
+What are the outputs of the two pop() operations?
+(a)3, 4 (b)3, 2 (c)2, 4 (d)4, 3
+
+3. Implement a Stack Class using Python’s built-in list. 
+Your implementation should include the following four methods:
+(5%) function __init__(self), (5%) function __len__(self)
+(5%) function push(self, value), (5%) function pop(self)
+
+

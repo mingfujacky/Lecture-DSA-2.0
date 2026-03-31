@@ -1,5 +1,6 @@
 from ch04_singly_linked_list import SinglyLinkedList
 
+
 class Bag:
     """
     ADT Bag implemented using singly linked list. Order of elements is not guaranteed"""
@@ -65,12 +66,14 @@ if __name__ == "__main__":
 
     b.insert("Queen")
     print("After add:", b)
+    print("size:", b.get_current_size())
 
     print("contains King?", b.contains("King"))
     print("freq(Ace):", b.get_frequency_of("Ace"))
 
     b.remove("Ace")
     print("After remove one Ace:", b)
+    print("size:", b.get_current_size())
 
     print("Traverse return:", b.traverse(str))
 
