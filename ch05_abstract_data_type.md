@@ -105,7 +105,7 @@ print('game over! total guesses: ', total_guess)
 ```python
 class Bag:
     def __init__(self, items=None):
-        self._data = XX
+        self._data = ??
         if items is not None:
             for item in items:
                 self._data.append(item)

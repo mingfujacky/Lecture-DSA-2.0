@@ -149,7 +149,7 @@ class Stack:
 4. 所有token讀完後，如果 operator stack 不是空的，則將 operator 依序 pop 出來
 5. operator stack rule
   - A：'(' 一律 push
-  - B: ')' 需重複 pop operator stack中的operator，直到遇見')'一同抵銷
+  - B: ')' 需重複 pop operator stack中的operator，直到遇見'('一同抵銷
   - C: operator在stack中只能優先序大的壓小的。如果外面的operator優先序較大，則 push。否則（小於等於）就一直做 pop，直到遇見優先序較小的運算子或堆疊為空，再把外面的運算子 push 到 operation stack 中。
 
 # Illustration of Infix to Postfix Conversion
@@ -198,7 +198,7 @@ What are the outputs of the two pop() operations?
 
 3. Implement a Stack Class using Python’s built-in list. 
 Your implementation should include the following four methods:
-(5%) function __init__(self), (5%) function __len__(self)
+(5%) function \_\_init\_\_(self), (5%) function \_\_len\_\_(self)
 (5%) function push(self, value), (5%) function pop(self)
 
 
