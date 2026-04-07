@@ -1,16 +1,18 @@
-from ch08_general_tree_node import GeneralTreeNode
+from ch09_general_tree_node import GeneralTreeNode
+
+
 class GeneralTree:
     def __init__(self):
         self._root = None
 
-    def set_root(self, root_data):  
+    def set_root(self, root_data):
         """Sets the root node of the tree to a new node with `root_data`."""
-        self._root = GeneralTreeNode(root_data)    
+        self._root = GeneralTreeNode(root_data)
 
     def insert_child(self, parent_node, child_node):
         """Inserts a new child node with `child_node` under `parent_node`."""
         parent_node.add_child(child_node)
-        return True    
+        return True
 
     def delete_child(self, parent_node, child_node):
         """Deletes `child_node` from the children of `parent_node`."""
@@ -23,9 +25,10 @@ class GeneralTree:
     def get_root(self):
         """Returns the root node of the tree."""
         return self._root
-    
+
     def search(self, target_data):
         """Searches for a node with `target_data` in the tree."""
+
         def _search_recursive(node):
             if node._data == target_data:
                 return node
@@ -38,9 +41,10 @@ class GeneralTree:
         if self.is_empty():
             return None
         return _search_recursive(self._root)
-    
+
     def height(self):
         """Calculates the height of the tree."""
+
         def _height_recursive(node):
             if not node._children:
                 return 0
@@ -49,9 +53,10 @@ class GeneralTree:
         if self.is_empty():
             return -1
         return _height_recursive(self._root)
-    
+
     def __len__(self):
         """Returns the number of nodes in the tree."""
+
         def _count_nodes(node):
             count = 1  # Count the current node
             for child in node._children:
@@ -61,7 +66,7 @@ class GeneralTree:
         if self.is_empty():
             return 0
         return _count_nodes(self._root)
-    
+
     def traverse_preorder(self):
         """Performs a preorder traversal of the tree and returns a list of node data."""
         result = []
@@ -73,8 +78,8 @@ class GeneralTree:
 
         if not self.is_empty():
             _preorder_recursive(self._root)
-        return result   
-    
+        return result
+
     def traverse_postorder(self):
         """Performs a postorder traversal of the tree and returns a list of node data."""
         result = []
@@ -87,7 +92,7 @@ class GeneralTree:
         if not self.is_empty():
             _postorder_recursive(self._root)
         return result
-    
+
     def traverse_level_order(self):
         """Performs a level-order traversal of the tree and returns a list of node data."""
         result = []
@@ -104,7 +109,8 @@ class GeneralTree:
     def __str__(self):
         """Returns a string representation of the tree."""
         return str(self._root)
-    
+
+
 if __name__ == "__main__":
     # 1. Create the general tree with root node
     my_tree = GeneralTree()
