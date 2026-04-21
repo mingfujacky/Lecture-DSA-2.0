@@ -52,7 +52,7 @@ Binary trees are defined by restricting each node to a maximum of two children.
 
 # Binary Tree Types
 - Full Binary Tree: every node other than the leaves has two children.
-- Perfect Binary Tree: all internal nodes have two children and all leaves are at the same level.
+- Perfect Binary Tree: all internal nodes have two children and all leaves are at the same level. (all levels are completely filled)
 - Complete Binary Tree: all levels are completely filled except possibly the last level, and the last level has all keys as left as possible.
 - Balanced Binary Tree: a binary tree in which the height of the two subtrees of any node never differ by more than one.
 - Degenerate and Skewed Tree: each parent node has only one child. Such trees behave like linked lists.
@@ -67,13 +67,18 @@ Binary trees are defined by restricting each node to a maximum of two children.
 - With 'n' nodes, the min possible height is ⌈log2(n + 1)⌉ − 1 under complete or perfect binary tree
 - In a complete binary tree, given a node with an index i > 0, its parent’s index is (i - 1) // 2, and its children's indexes are (2 * i + 1) and (2 * i + 2)
 
+# n<sub>0</sub> = n<sub>2</sub> + 1
+- Node number: n = n<sub>0</sub> + n<sub>1</sub> + n<sub>2</sub>
+- Edge number: n - 1 = 0 * n<sub>0</sub> + 1 * n<sub>1</sub> + 2 * n<sub>2</sub>
+- Therefore, n<sub>0</sub> + n<sub>1</sub> + n<sub>2</sub> = 1 * n<sub>1</sub> + 2 * n<sub>2</sub> + 1
+
 # Design Binary Tree Node
 ![w:500 binary tree node diagram](asset/image/binary_tree_node_diagram.png)
-[code/ch09_binary_tree_node.py](code/ch09_binary_tree_node.py)
+[code/ch10_binary_tree_node.py](code/ch10_binary_tree_node.py)
 
 # ADT - Binary Tree
 ![w:500 binary tree diagram](asset/image/binary_tree_diagram.png)
-[code/ch09_binary_tree.py](code/ch09_binary_tree.py)
+[code/ch10_binary_tree.py](code/ch10_binary_tree.py)
 
 # Binary Tree Applications:
 - **Huffman Coding Trees**: used in data compression algorithms.
@@ -96,7 +101,7 @@ Binary trees are defined by restricting each node to a maximum of two children.
 # Huffman Coding Tree Visualization
 [![Huffman Coding Trees](https://i.ytimg.com/vi/d3gHFesPc_E/hqdefault.jpg)](https://youtu.be/d3gHFesPc_E?si=HaMDpkypz_8Anv1A)
 
-[code/ch09_huffman_coding_tree.py](code/ch09_huffman_coding_tree.py)
+[code/ch10_huffman_coding_tree.py](code/ch10_huffman_coding_tree.py)
 
 # Binary Search Trees
 A binary search tree (BST) has some properties
@@ -116,7 +121,7 @@ In BST, for any node N that stores a value v, all nodes in the left subtree of N
 
 # Design BST Node
 ![w:500 binary tree node diagram](asset/image/bst_node_diagram.png)
-[code/ch09_bst_node.py](code/ch09_bst_node.py)
+[code/ch10_bst_node.py](code/ch10_bst_node.py)
 
 # Find the Minimum and Maximum Elements in a BST
 - Get the maximum element, we start at the root and follow the links to the right children until we reach a node that has no right child. This node (which could be the root itself) stores the maximum value in the tree.

@@ -162,7 +162,7 @@ class GeneralTree:
         result = []
 
         def _preorder_recursive(node):
-            result.append(node._data)
+            result.??????(node._data)
             for child in node._children:
                 _preorder_recursive(child)
 
@@ -176,7 +176,7 @@ class GeneralTree:
 
         def _postorder_recursive(node):
             for child in node._children:
-                _postorder_recursive(child)
+                _postorder_recursive(?????)
             result.append(node._data)
 
         if not self.is_empty():
@@ -191,9 +191,9 @@ class GeneralTree:
 
         queue = [self._root]
         while queue:
-            current_node = queue.pop(0)
-            result.append(current_node._data)
-            queue.extend(current_node._children)
+            current_node = queue.???(0)
+            result.??????(current_node._data)
+            queue.??????(current_node._children)
         return result
 
 ```
@@ -206,9 +206,3 @@ class GeneralTree:
 - Each node contains a value and a number of links to other nodes, from zero to some number k (k-ary tree).
 - We can define a GeneralTreeNode class to represent each node in the tree, and a GeneralTree class to manage the overall tree structure and operations.
 - Tree traversal techniques include depth-first search (DFS) and breadth-first search (BFS), which allow us to visit all nodes in a specific order.
-
-# Supplement
-**LeetCode 589: N-ary Tree Preorder Traversal**
-Parse an N-ary tree described as [1, None, 3, 2, 4, None, 5, 6] and return the preorder traversal of its nodes' values.
-
-[ch09_nary_tree_leetcode_589.py](code/ch09_nary_tree_leetcode_589.py)

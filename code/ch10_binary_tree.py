@@ -1,4 +1,4 @@
-from ch09_binary_tree_node import BTNode
+from ch10_binary_tree_node import BTNode
 
 
 class BinaryTree:
