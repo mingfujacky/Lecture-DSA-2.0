@@ -1,7 +1,8 @@
 """A class modeling the nodes of the binary search tree."""
 
+
 class BSTNode:
-   
+
     def __init__(self, data, left=None, right=None):
         self._data = data
         self._left = left
@@ -23,7 +24,7 @@ class BSTNode:
         right_node_data = self._right._data if self._right is not None else None
 
         return f"BTNode: {id(self)} data: {self._data} (left: {left_node_id}, data: {left_node_data})(right: {right_node_id}, data: {right_node_data})"
-    
+
     @property
     def data(self):
         return self._data
@@ -44,6 +45,25 @@ class BSTNode:
     def right(self, node):
         self._right = node
 
+    def find_min_in_subtree(self):
+        # Return the node with the smallest value in the subtree rooted at the node, and its parent
+        parent = None
+        node = self
+        while node.left is not None:
+            parent = node
+            node = node.left
+        return node, parent
+
+    def find_max_in_subtree(self):
+        # Return the node with the largest value in the subtree rooted at the node, and its parent.
+        parent = None
+        node = self
+        while node.right is not None:
+            parent = node
+            node = node.right
+        return node, parent
+
+
 if __name__ == "__main__":
     # Test the Node class
     node10 = BSTNode(10)
@@ -57,3 +77,11 @@ if __name__ == "__main__":
     node5.right = node8
     print(node10)
     print(repr(node10))
+    print("-" * 100)
+    min_node, min_parent = node10.find_min_in_subtree()
+    print("min_node:", min_node)
+    print("min_node_parent:", repr(min_parent))
+    print("-" * 100)
+    max_node, max_parent = node10.find_max_in_subtree()
+    print("max_node:", max_node)
+    print("max_node_parent:", repr(max_parent))

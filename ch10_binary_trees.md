@@ -64,44 +64,187 @@ Binary trees are defined by restricting each node to a maximum of two children.
 - The max number of nodes at level 'l' of a binary tree is 2<sup>l</sup>, where root is at level 0.
 - The max number of nodes in a binary tree of height 'h' is 2<sup>(h+1)</sup> - 1.
 - In a binary tree, n<sub>0</sub> = n<sub>2</sub> + 1, where n<sub>0</sub> is the number of leaf nodes and n<sub>2</sub> is the number of nodes with two children.
-- With 'n' nodes, the min possible height is ⌈log2(n + 1)⌉ − 1 under complete or perfect binary tree
+- With 'n' nodes, the min possible height is ⌈log<sub>2</sub>(n + 1)⌉ − 1 under complete or perfect binary tree
 - In a complete binary tree, given a node with an index i > 0, its parent’s index is (i - 1) // 2, and its children's indexes are (2 * i + 1) and (2 * i + 2)
+# Prove max # of nodes in a binary tree of height 'h'
+2<sup>0</sup> + 2<sup>1</sup> + 2<sup>2</sup> + ... + 2<sup>h</sup> = 2<sup>(h+1)</sup> - 1
 
-# n<sub>0</sub> = n<sub>2</sub> + 1
+**Geometric Series Sum Formula** 
+
+$$S_n = \frac{a_1(r^n - 1)}{r - 1}$$
+
+* **$S_n$**: The sum of the first $n$ terms of the sequence.
+* **$a_1$**: The first term of the sequence.
+* **$r$**: The common ratio (where $r \neq 1$).
+* **$n$**: The number of terms.
+
+  
+# Prove n<sub>0</sub> = n<sub>2</sub> + 1
 - Node number: n = n<sub>0</sub> + n<sub>1</sub> + n<sub>2</sub>
 - Edge number: n - 1 = 0 * n<sub>0</sub> + 1 * n<sub>1</sub> + 2 * n<sub>2</sub>
 - Therefore, n<sub>0</sub> + n<sub>1</sub> + n<sub>2</sub> = 1 * n<sub>1</sub> + 2 * n<sub>2</sub> + 1
+
+# Prove the min possible height with 'n' nodes
+- The min possible height of a binary tree with n nodes is achieved when the tree is complete or perfect, which means all levels are completely filled except possibly the last level, and the last level has all keys as left as possible.
+- If we have n nodes, and we want to find the minimum height h, we know that n cannot exceed the capacity of a perfect tree of that height. Therefore:
+$n \leq 2^{h+1} - 1$
+$n + 1 \leq 2^{h+1}$
+$\log_2(n + 1) \leq h + 1$
+$\log_2(n + 1) - 1 \leq h$
+### Minimum height: $⌈\log_2(n + 1)⌉ − 1$
 
 # Design Binary Tree Node
 ![w:500 binary tree node diagram](asset/image/binary_tree_node_diagram.png)
 [code/ch10_binary_tree_node.py](code/ch10_binary_tree_node.py)
 
+# Lab of Binary Tree Node
+```python
+class BTNode:
+    def __init__(self, data, left=None, right=None):
+        self._data = data
+        self._left = left
+        self._right = right
+
+    @left.setter
+    def left(self, node):
+        self._left = ????
+
+    @right.setter
+    def right(self, node):
+        self.?????? = node
+
+```
+
 # ADT - Binary Tree
 ![w:500 binary tree diagram](asset/image/binary_tree_diagram.png)
 [code/ch10_binary_tree.py](code/ch10_binary_tree.py)
+
+# Lab of Binary Tree (1/2)
+```python
+def __init__(self):
+        self._root = None
+
+def set_root(self, root_data):
+    """Sets the root node of the tree to `node`."""
+    self._root = ??????(root_data)
+
+def __len__(self):
+    """Returns the number of nodes in the tree."""
+
+    def _count_nodes(node):
+        if node is None:
+            return 0
+        return 1 + _count_nodes(node.????) + _count_nodes(node.?????)
+    return _count_nodes(self._root)
+
+def get_height(self, node):
+    """Calculates how many steps to the furthest leaf."""
+    if node is None:
+        return -1
+    return 1 + ???(self.get_height(node.left), self.get_height(node.right))
+
+def search(self, target):
+    """Checks if the tree contains a node with `target` data."""
+
+    def _contains_recursive(node):
+        if node is None:
+            return False
+        if node.data == target:
+            return True
+        return _contains_recursive(node.left) ?? _contains_recursive(node.right)
+
+    return _contains_recursive(self._root)
+
+```
+
+# Lab of Binary Tree (2/2)
+```python
+def traverse_in_order(self, node):
+    result = []
+
+    def _in_order_recursive(cur):
+        if cur is not None:
+            _in_order_recursive(cur.left)
+            result.??????(cur.data)
+            _in_order_recursive(cur.right)
+
+    _in_order_recursive(node)
+    return result
+
+def traverse_preorder(self, node):
+    result = []
+
+    def _preorder_recursive(cur):
+        if cur is not None:
+            result.append(cur.data)
+            _preorder_recursive(cur.????)
+            _preorder_recursive(cur.?????)
+
+    _preorder_recursive(node)
+    return result
+
+def traverse_postorder(self, node):
+    result = []
+
+    def _postorder_recursive(cur):
+        if cur is not None:
+            ??????????_recursive(cur.left)
+            ??????????_recursive(cur.right)
+            result.append(cur.data)
+
+    _postorder_recursive(node)
+    return result
+
+def traverse_level_order(self):
+    """Performs a level-order traversal of the tree and returns a list of node data."""
+    result = []
+    if self.is_empty():
+        return result
+
+    queue = [self._root]
+
+    while ?????:
+        current = queue.???(0)
+        result.append(current.data)
+
+        if current.left is not None:
+            queue.append(current.left)
+        if current.right is not None:
+            queue.append(current.right)
+
+    return result
+
+```
 
 # Binary Tree Applications:
 - **Huffman Coding Trees**: used in data compression algorithms.
 - **Binary Search Trees (BST)**: used for efficient searching and sorting.
 - **Heaps**: used in priority queues and heap sort algorithms.
 
-[![Huffman Coding Trees](https://i.ytimg.com/vi/6K4aZiwq1Jk/hqdefault.jpg)](https://youtu.be/6K4aZiwq1Jk?si=rapnCX5zd5iqOW_a)
+# Huffman Coding Tree
+| Tutorial 1 | Tutorial 2 |
+| :---: | :---: |
+| [![Huffman Coding Trees](https://i.ytimg.com/vi/6K4aZiwq1Jk/hqdefault.jpg)](https://youtu.be/6K4aZiwq1Jk) | [![Huffman Coding Trees](https://i.ytimg.com/vi/d3gHFesPc_E/hqdefault.jpg)](https://youtu.be/d3gHFesPc_E) |
+| *Basics of Construction* | *Advanced Examples* |
 
-# Huffman Coding Tree Construction
+# Construct Huffman Coding Tree
 - Given the following characters and their frequencies, construct a Huffman coding tree: A: 45, B: 13, C: 12, D: 16, E: 9, F: 5
 - Steps to construct the tree:
-  1. Create a leaf node for each character and build a min-heap of all leaf nodes.
-  2. While there is more than one node in the heap:
-     - Extract the two nodes of the lowest frequency from the heap.
+  1. Create a leaf node for each character and build a list of all leaf nodes sorted by their frequencies with ascending order.
+  2. While there is more than one node in the list:
+     - Extract the two nodes of the lowest frequency from the list.
      - Create a new internal node with these two nodes as children and with frequency equal to the sum of their frequencies.
-     - Insert the new node back into the heap.
-  3. The remaining node is the root of the Huffman tree.
+     - Insert the new node back into the list.
+  3. The last remaining node in the list is the root of the Huffman tree.
+
+# Implement Huffman Coding Tree
+[code/ch10_huffman_coding_tree.py](code/ch10_huffman_coding_tree.py)
+
+# Illustrate Huffman Coding Tree
+- A: 45, B: 13, C: 12, D: 16, E: 9, F: 5
 - Huffman codes: A: 0, B: 101, C: 100, D: 111, E: 1101, F: 1100
 
-# Huffman Coding Tree Visualization
-[![Huffman Coding Trees](https://i.ytimg.com/vi/d3gHFesPc_E/hqdefault.jpg)](https://youtu.be/d3gHFesPc_E?si=HaMDpkypz_8Anv1A)
-
-[code/ch10_huffman_coding_tree.py](code/ch10_huffman_coding_tree.py)
+![w:700 Huffman coding tree](asset/image/huffman_coding_tree_result.png)
 
 # Binary Search Trees
 A binary search tree (BST) has some properties
@@ -119,10 +262,6 @@ In BST, for any node N that stores a value v, all nodes in the left subtree of N
     <img src="asset/image/bst_order.png">
 </div>
 
-# Design BST Node
-![w:500 binary tree node diagram](asset/image/bst_node_diagram.png)
-[code/ch10_bst_node.py](code/ch10_bst_node.py)
-
 # Find the Minimum and Maximum Elements in a BST
 - Get the maximum element, we start at the root and follow the links to the right children until we reach a node that has no right child. This node (which could be the root itself) stores the maximum value in the tree.
 - Get the minimum element, we start at the root and follow the links to the left children until we reach a node that has no left child.
@@ -132,9 +271,43 @@ In BST, for any node N that stores a value v, all nodes in the left subtree of N
 
 
 
-# Implement BST's Node (2/2)
+# Design BST Node
+![w:500 binary tree node diagram](asset/image/bst_node_diagram.png)
+[code/ch10_bst_node.py](code/ch10_bst_node.py)
+
+# Lab of BST Node
 ```python
+class BSTNode:
+   
+    def __init__(self, data, left=None, right=None):
+        self._data = data
+        self._left = left
+        self._right = right
+
+    def find_min_in_subtree(self):
+        # Return the node with the smallest value in the subtree rooted at the node, and its parent
+        parent = None
+        node = self
+        while node.???? is not None:
+            parent = node
+            node = node.????
+        return node, parent
+
+    def find_max_in_subtree(self):
+        # Return the node with the largest value in the subtree rooted at the node, and its parent.
+        parent = None
+        node = self
+        while node.????? is not None:
+            parent = node
+            node = node.?????
+        return node, parent
 ```
+
+# Design BST
+![w:500 binary tree diagram](asset/image/bst_diagram.png)
+[code/ch10_bst.py](code/ch10_bst.py)
+
+
 # Implement BST Helper Functions
 ```python
 class BinarySearchTree:
@@ -144,8 +317,8 @@ class BinarySearchTree:
 
 # Design BST Search
 <div class="middle-grid">
-    <img src="files/image/tree_search_1.png">
-    <img src="files/image/tree_search_2.png">
+    <img src="asset/image/tree_search_1.png">
+    <img src="asset/image/tree_search_2.png">
 </div>
 The search method follows a single path, from the root to (possibly) a leaf, means that it will take no more steps than the height of the tree — it needs O(h) comparisons, where h is the height of the tree.
 
@@ -174,7 +347,7 @@ def _search(self, value):
 
 # Design BST Insert
 <div class="middle-grid">
-    <img src="files/image/tree_insert.png">
+    <img src="asset/image/tree_insert.png">
 </div>
 
 - In general, when we get to a node, we first check the value it stores to understand which branch we need to traverse and whether we need to go left or right. 
@@ -209,16 +382,16 @@ def insert(self, value):
  - Case 3: delete a node having two children
 
 <div class="middle-grid">
-    <img src="files/image/tree_delete_cases.png">
-    <img src="files/image/tree_delete_leaf.png">
-    <img src="files/image/tree_delete_one_child.png">
+    <img src="asset/image/tree_delete_cases.png">
+    <img src="asset/image/tree_delete_leaf.png">
+    <img src="asset/image/tree_delete_one_child.png">
 </div>
 
 # Design DST Delete (2/2)
 <div class="middle-grid">
-    <img src="files/image/tree_delete_two_children_1.png">
-    <img src="files/image/tree_delete_two_children_2.png">
-    <img src="files/image/tree_delete_two_children_3.png">
+    <img src="asset/image/tree_delete_two_children_1.png">
+    <img src="asset/image/tree_delete_two_children_2.png">
+    <img src="asset/image/tree_delete_two_children_3.png">
 </div>
 
 # Implement BST Delete
@@ -259,13 +432,13 @@ def delete(self, value):
 ```
 # Illustrate BST Delete
 <div class="middle-grid">
-    <img src="files/image/tree_delete_example_1.png">
-    <img src="files/image/tree_delete_example_2.png">
-    <img src="files/image/tree_delete_example_3.png">
+    <img src="asset/image/tree_delete_example_1.png">
+    <img src="asset/image/tree_delete_example_2.png">
+    <img src="asset/image/tree_delete_example_3.png">
 </div>
 
 # Tree Category
 <div class="columns">
-    <img src="files/image/tree_category.png">
+    <img src="asset/image/tree_category.png">
 </div>
 
