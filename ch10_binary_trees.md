@@ -307,14 +307,6 @@ class BSTNode:
 ![w:500 binary tree diagram](asset/image/bst_diagram.png)
 [code/ch10_bst.py](code/ch10_bst.py)
 
-
-# Implement BST Helper Functions
-```python
-class BinarySearchTree:
-    def __init__(self):
-        self._root = None
-```
-
 # Design BST Search
 <div class="middle-grid">
     <img src="asset/image/tree_search_1.png">
@@ -325,23 +317,18 @@ The search method follows a single path, from the root to (possibly) a leaf, mea
 # Implement BST Search
 ```python
 def _search(self, value):
-    """Returns a tuple. 
-       The first element is the node containing the target value, or None if not found.
-       The second element is the parent of the node in the first position. 
-       If the target wasn't found or if it was the root, the parent is set to None.
-    """
     parent = None
     node = self._root
     while node is not None:
-        node_val = node.value()
-        if node_val == value:
+        node_val = node.data
+        if node_val ?? value:
             return node, parent
-        elif value < node_val:
+        elif value ? node_val:
             parent = node
-            node = node.left()
+            node = node.left
         else:
             parent = node
-            node = node.right()
+            node = node.?????
     return None, None
 ```
 
@@ -356,24 +343,24 @@ def _search(self, value):
 
 # Implement BST Insert
 ```python
-def insert(self, value):       
+def insert(self, value):
         node = self._root
-        if node is None: # Empty tree
-            self._root = Node(value)
+        if node is None:  # Empty tree
+            self._root = BSTNode(value)
             return None
-        
+
         while node is not None:
-            if value <= node.value():
-                if node.left() is ????:
-                    node.set_????(Node(value))
+            if value <= node.data:
+                if node.left is ????:
+                    node.left = BSTNode(value)
                     break
                 else:
-                    node = node.????() # We keep traversing the left branch
-            elif node.right() is ????:
-                    node.set_?????(Node(value))
-                    break
+                    node = node.????  # We keep traversing the left branch
+            elif node.right is None:
+                node.????? = BSTNode(value)
+                break
             else:
-                node = node.?????()  # We keep traversing the right branch
+                node = node.?????  # We keep traversing the right branch
 ```
 
 # Design DST Delete (1/2)
@@ -397,38 +384,44 @@ def insert(self, value):
 # Implement BST Delete
 ```python
 def delete(self, value):
-        if self._root is None:
-            raise ValueError('Delete on an empty tree')
-        node, parent = self._search(value)
-        if node is None:
-            raise ValueError('Value not found')
-        if node.left() is None or node.right() is None:  # The node has at most only one child
-            if node.left() is None:
-                maybe_child = node.right() 
-            else:
-                maybe_child = node.left()
-            if parent is None:  # The node is the root
-                self._root = maybe_child
-            elif value <= parent.value():
-                parent.set_left(maybe_child)
-            else:
-                parent.set_right(maybe_child)
-        else: # The node N has two children.
-            # Find and remove the node M with the largest value in the left subtree of N.
-            max_node, max_node_parent = node.left().find_max_in_subtree()
-            if max_node_parent is None: # M is the left child of N.
-                new_node = Node(max_node.value(), None, node.right())
-            else:
-                new_node = Node(max_node.value(), node.left(), node.right())
-                max_node_parent.set_right(max_node.left())
-            # Then  replace the node to be deleted with a new node with M.value(), and the same subtrees as N.
-            if parent is None:
-                # The node is the root
-                self._root = new_node
-            elif value <= parent.value():
-                parent.set_left(new_node)
-            else:
-                parent.set_right(new_node)
+    if self._root is None:
+        raise ValueError("Delete on an empty tree")
+    node, parent = self._search(value)
+    if node is None:
+        raise ValueError("Value not found")
+
+    if node.left is None or node.right is None:
+        if node.left is None:
+            maybe_child = node.right
+        else:
+            maybe_child = node.left
+
+        # The node has at most only one child
+        if parent is None:
+            # The node is the root
+            self._root = maybe_child
+        elif value <= parent.data:
+            parent.left = maybe_child
+        else:
+            parent.right = maybe_child
+
+    else:  # The node N has two children.
+        # Find and remove the node M with the largest value in the left subtree of N.
+        max_node, max_node_parent = node.left.find_max_in_subtree()
+        if max_node_parent is None:  # M is the left child of N.
+            new_node = BSTNode(max_node.data, None, node.right)
+        else:
+            # Then  replace the node to be deleted with a new node with M.value(),
+            new_node = BSTNode(max_node.data, node.left, node.right)
+            max_node_parent.set_right(max_node.left())
+
+        if parent is None:
+            # The node is the root
+            self._root = new_node
+        elif value <= parent.data:
+            parent.left = new_node
+        else:
+            parent.right = new_node
 ```
 # Illustrate BST Delete
 <div class="middle-grid">
