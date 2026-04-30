@@ -1,4 +1,4 @@
-from ch10_graph_vertex import Vertex
+from ch11_graph_vertex import Vertex
 from pathlib import Path
 
 
@@ -6,7 +6,9 @@ class Graph:
     def __init__(self):
         self._vertex_number = 0
         self._edge_number = 0
-        self._adj = {}
+        self._adj = (
+            {}
+        )  # key: vertex key, value: vertex object {2: Vertex(2), 3: Vertex(3), ...}
 
     def _get_vertex(self, key):
         if key not in self._adj:
@@ -126,4 +128,7 @@ if __name__ == "__main__":
     print(graph2)
     graph2.delete_edge(0, 2)
     print("After deleting edge 0->2:")
+    graph2.delete_edge(2, 0)
+    print("After deleting edge 2->0:")
+    graph2.delete_vertex(2)
     print(graph2)

@@ -1,4 +1,4 @@
-from ch10_graph_weighted import WeightedGraphList
+from ch11_graph_weighted import WeightedGraphList
 from pathlib import Path
 
 
