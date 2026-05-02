@@ -157,7 +157,7 @@ We can discuss how we measure the "cost" of our code to predict how its performa
 
 # Why Should I Care About Data Structure
 ### Solve Lottery by SET or LIST, which data structure is better?
-[Code of Lottery](code/lottery_comparison.py)
+[Code of Lottery](code/ch01_lottery_comparison.py)
 
 # Time Complexity of Set Implementation
 ```python
@@ -205,7 +205,7 @@ def lottery_by_list(numbers):
 
 # Why Should I Care About Algorithms
 ### Searching a number by linear search vs binary search, which algorithm is better?
-[Code of Search](code/lottery.py)
+[Code of Search](code/ch01_search_comparison.py)
 
 # Time Complexity of Linear Search
 ```python
