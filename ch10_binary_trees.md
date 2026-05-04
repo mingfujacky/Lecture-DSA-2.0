@@ -435,3 +435,10 @@ def delete(self, value):
     <img src="asset/image/tree_category.png">
 </div>
 
+# Recap
+- Binary trees are defined by restricting each node to a maximum of two children.
+- There are different types of binary trees, such as full, perfect, complete, balanced, and degenerate trees.
+- Binary trees have properties related to the number of nodes, height, and relationships between leaf nodes and nodes with two children.
+- Binary trees can be implemented using a node class and a tree class, with methods for counting nodes, calculating height, searching for values, and traversing the tree in different orders.
+- Binary trees have applications in various areas, including Huffman coding trees for data compression, binary search trees (BST) for efficient searching and heaps for sorting.
+- BSTs maintain a specific order property that allows for efficient searching, insertion, and deletion of values. The search, insert, and delete operations in a BST have a time complexity of O(h), where h is the height of the tree. 
