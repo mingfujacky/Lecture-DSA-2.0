@@ -363,7 +363,7 @@ def insert(self, value):
                 node = node.?????  # We keep traversing the right branch
 ```
 
-# Design DST Delete (1/2)
+# Design BST Delete (1/2)
  - Case 1: delete a leaf
  - Case 2: delete a node with only one child
  - Case 3: delete a node having two children
@@ -374,7 +374,7 @@ def insert(self, value):
     <img src="asset/image/tree_delete_one_child.png">
 </div>
 
-# Design DST Delete (2/2)
+# Design BST Delete (2/2)
 <div class="middle-grid">
     <img src="asset/image/tree_delete_two_children_1.png">
     <img src="asset/image/tree_delete_two_children_2.png">
