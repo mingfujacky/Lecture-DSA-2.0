@@ -113,20 +113,31 @@ class BinarySearchTree:
 
 
 if __name__ == "__main__":
-    bst = BinarySearchTree()
-    bst.insert(5)
-    bst.insert(3)
-    bst.insert(7)
-    bst.insert(2)
-    bst.insert(4)
-    bst.insert(6)
-    bst.insert(8)
+    # bst = BinarySearchTree()
+    # bst.insert(5)
+    # bst.insert(3)
+    # bst.insert(7)
+    # bst.insert(2)
+    # bst.insert(4)
+    # bst.insert(6)
+    # bst.insert(8)
 
-    print(bst)  # Should print the BST structure
-    print("length:", len(bst))  # Should print the number of nodes in the BST
-    print(bst.contains(4))  # Should return True
-    print(bst.contains(10))  # Should return False
-    bst.delete(4)  # Should delete the node with value 4
-    print(bst)  # Should print the BST structure after deletion
-    bst.delete(7)  # Should delete the node with value 7
-    print(bst)  # Should print the BST structure after deletion
+    # print(bst)  # Should print the BST structure
+    # print("length:", len(bst))  # Should print the number of nodes in the BST
+    # print(bst.contains(4))  # Should return True
+    # print(bst.contains(10))  # Should return False
+    # bst.delete(4)  # Should delete the node with value 4
+    # print(bst)  # Should print the BST structure after deletion
+    # bst.delete(7)  # Should delete the node with value 7
+    # print(bst)  # Should print the BST structure after deletion
+
+    # case 2
+    bst2 = BinarySearchTree()
+    bst2.insert(5)
+    bst2.insert(4)
+    bst2.insert(6)
+    bst2.insert(2)
+    bst2.insert(3)
+    print(bst2)  # Should print the BST structure
+    bst2.delete(5)  # Should delete the node with value 5
+    print(bst2)  # Should print the BST structure after deletion

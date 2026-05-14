@@ -93,9 +93,14 @@ style: |
 # Summary Table of Basic Sorting Algorithm
 | Algorithm | Best Case | Worst Case | Intuition |Stability |
 |-----------|-----------|------------|-----------|----------|
-| Bubble Sort | $O(n)$ | $O(n^2)$ | Swapping neighbors | Stable |
-| Selection Sort | $O(n^2)$ | $O(n^2)$ | Finding the minimum | Unstable |
-| Insertion Sort | $O(n)$ | $O(n^2)$ | Placing cards in a hand | Stable |
+| Bubble Sort | $Ω(n)$ | $O(n^2)$ | Swapping neighbors | Stable |
+| Selection Sort | $Ω(n^2)$ | $O(n^2)$ | Finding the minimum | Unstable |
+| Insertion Sort | $Ω(n)$ | $O(n^2)$ | Placing cards in a hand | Stable |
+
+initial array [4<sub>a</sub>, 4<sub>b</sub>, 2] 
+bubble sort: [2, 4<sub>a</sub>, 4<sub>b</sub>] (stable)
+selection sort: [2, 4<sub>b</sub>, 4<sub>a</sub>] (unstable)
+insertion sort: [2, 4<sub>a</sub>, 4<sub>b</sub>] (stable)
 
 # Merge Sort: "The Divide and Conquer Strategy"
 - Just as you might organize a large pile of documents by splitting them into two smaller stacks, sorting those, and then carefully merging them back together, Merge Sort uses a recursive approach to handle data.
