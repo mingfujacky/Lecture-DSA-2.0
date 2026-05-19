@@ -78,7 +78,7 @@ class BinarySearchTree:
         if node is None:
             raise ValueError("Value not found")
 
-        if node.left is None or node.right is None:
+        if node.left is None or node.right is None:  # Pattern 1 and Pattern 2
             if node.left is None:
                 maybe_child = node.right
             else:
@@ -94,15 +94,18 @@ class BinarySearchTree:
                 parent.right = maybe_child
 
         else:  # The node N has two children.
-            # Find and remove the node M with the largest value in the left subtree of N.
+            # 1. Find the predecessor m (max node in the left subtree)
             max_node, max_node_parent = node.left.find_max_in_subtree()
-            if max_node_parent is None:  # M is the left child of N.
-                new_node = BSTNode(max_node.data, None, node.right)
+            # 2. Create the replacement node. We copy the M's data, but use N's children
+            new_node = BSTNode(max_node.data, node.left, node.right)
+            # 3. Remove M from its original position. If M has a left child, it must be promoted
+            if max_node_parent is None:
+                # Special Case: The M is the direct left child of N, that is, M.P is None
+                new_node.left = max_node.left
             else:
-                # Then  replace the node to be deleted with a new node with M.value(),
-                new_node = BSTNode(max_node.data, node.left, node.right)
-                max_node_parent.set_right(max_node.left)
-
+                # General Case: The M is further down the right-branch of the left subtree
+                max_node_parent.right = max_node.left
+            # 4. Link the 'new_node' into the tree structure
             if parent is None:
                 # The node is the root
                 self._root = new_node
@@ -131,7 +134,119 @@ if __name__ == "__main__":
     # bst.delete(7)  # Should delete the node with value 7
     # print(bst)  # Should print the BST structure after deletion
 
-    # case 2
+    # case 1-1
+    print("Case 1-1")
+    bst = BinarySearchTree()
+    bst.insert(0)
+    print(bst)  # Should print the BST structure
+    bst.delete(0)  # Should delete the node with value 0
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 1-2
+    print("Case 1-2")
+    bst = BinarySearchTree()
+    bst.insert(3)
+    bst.insert(2)
+    bst.insert(4)
+    bst.insert(1)
+    print(bst)  # Should print the BST structure
+    bst.delete(1)  # Should delete the node with value 1
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 1-3
+    print("Case 1-3")
+    bst = BinarySearchTree()
+    bst.insert(5)
+    bst.insert(2)
+    bst.insert(7)
+    bst.insert(3)
+    print(bst)  # Should print the BST structure
+    bst.delete(3)  # Should delete the node with value 3
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 2-1
+    print("Case 2-1")
+    bst = BinarySearchTree()
+    bst.insert(3)
+    bst.insert(1)
+    print(bst)  # Should print the BST structure
+    bst.delete(3)  # Should delete the node with value 3
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 2-2
+    print("Case 2-2")
+    bst = BinarySearchTree()
+    bst.insert(3)
+    bst.insert(1)
+    bst.insert(2)
+    print(bst)  # Should print the BST structure
+    bst.delete(3)  # Should delete the node with value 3
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 2-3
+    print("Case 2-3")
+    bst = BinarySearchTree()
+    bst.insert(5)
+    bst.insert(4)
+    bst.insert(7)
+    bst.insert(2)
+    bst.insert(1)
+    bst.insert(3)
+    print(bst)  # Should print the BST structure
+    bst.delete(4)  # Should delete the node with value 4
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 2-4
+    print("Case 2-4")
+    bst = BinarySearchTree()
+    bst.insert(7)
+    bst.insert(3)
+    bst.insert(9)
+    bst.insert(5)
+    bst.insert(4)
+    bst.insert(6)
+    print(bst)  # Should print the BST structure
+    bst.delete(3)  # Should delete the node with value 3
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 2-5
+    print("Case 2-5")
+    bst = BinarySearchTree()
+    bst.insert(3)
+    bst.insert(1)
+    bst.insert(8)
+    bst.insert(5)
+    bst.insert(4)
+    bst.insert(6)
+    print(bst)  # Should print the BST structure
+    bst.delete(8)  # Should delete the node with value 8
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 2-6
+    print("Case 2-6")
+    bst = BinarySearchTree()
+    bst.insert(3)
+    bst.insert(1)
+    bst.insert(5)
+    bst.insert(8)
+    bst.insert(6)
+    bst.insert(9)
+    print(bst)  # Should print the BST structure
+    bst.delete(5)  # Should delete the node with value 5
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 3A-1
+    print("Case 3A-1")
+    bst = BinarySearchTree()
+    bst.insert(3)
+    bst.insert(2)
+    bst.insert(4)
+    print(bst)  # Should print the BST structure
+    bst.delete(3)  # Should delete the node with value 3
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 3A-2
+    print("Case 3A-2")
     bst2 = BinarySearchTree()
     bst2.insert(5)
     bst2.insert(4)
@@ -141,3 +256,82 @@ if __name__ == "__main__":
     print(bst2)  # Should print the BST structure
     bst2.delete(5)  # Should delete the node with value 5
     print(bst2)  # Should print the BST structure after deletion
+
+    # case 3A-3
+    print("Case 3A-3")
+    bst = BinarySearchTree()
+    bst.insert(4)
+    bst.insert(2)
+    bst.insert(5)
+    bst.insert(3)
+    print(bst)  # Should print the BST structure
+    bst.delete(4)  # Should delete the node with value 4
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 3A-4
+    print("Case 3A-4")
+    bst = BinarySearchTree()
+    bst.insert(8)
+    bst.insert(4)
+    bst.insert(9)
+    bst.insert(3)
+    bst.insert(6)
+    bst.insert(1)
+    bst.insert(5)
+    print(bst)  # Should print the BST structure
+    bst.delete(8)  # Should delete the node with value 8
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 3B-1
+    print("Case 3B-1")
+    bst = BinarySearchTree()
+    bst.insert(4)
+    bst.insert(2)
+    bst.insert(5)
+    bst.insert(1)
+    bst.insert(3)
+    print(bst)  # Should print the BST structure
+    bst.delete(2)  # Should delete the node with value 2
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 3B-2
+    print("Case 3B-2")
+    bst = BinarySearchTree()
+    bst.insert(6)
+    bst.insert(4)
+    bst.insert(7)
+    bst.insert(3)
+    bst.insert(5)
+    bst.insert(2)
+    print(bst)  # Should print the BST structure
+    bst.delete(4)  # Should delete the node with value 4
+    print(bst)  # Should print the BST structure after deletion
+
+    # case 3B-3
+    print("Case 3B-3")
+    bst = BinarySearchTree()
+    bst.insert(6)
+    bst.insert(3)
+    bst.insert(7)
+    bst.insert(1)
+    bst.insert(4)
+    bst.insert(2)
+    bst.insert(5)
+    print(bst)  # Should print the BST structure
+    bst.delete(3)  # Should delete the node with value 3
+    print(bst)  # Should print the BST structure after deletion
+    # case 3B-4
+    print("Case 3B-4")
+    bst = BinarySearchTree()
+    bst.insert(8)
+    bst.insert(5)
+    bst.insert(9)
+    bst.insert(2)
+    bst.insert(6)
+    bst.insert(1)
+    bst.insert(4)
+    bst.insert(7)
+    bst.insert(3)
+    print(bst)  # Should print the BST structure
+    bst.delete(5)  # Should delete the node with value 5
+    print(bst)  # Should print the BST structure after deletion

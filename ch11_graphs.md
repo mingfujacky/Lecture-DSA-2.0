@@ -208,17 +208,21 @@ def delete_edge(self, key1, key2):
 - Non-uniqueness: If multiple edges have the same weight, there may be more than one valid MST for the graph.
 - Two primary methods for finding an MCST: Kruskal's algorithm, Prim's algorithm
 
+# Concept of MCST and Union Find (Disjoint) Set
+| Minimum Cost Spanning Tree |Union Find Set Data Structure  |
+| :---: | :---: |
+| [![Illustrate MCST](https://i.ytimg.com/vi/KsobpcI3dN0/hqdefault.jpg)](https://youtu.be/KsobpcI3dN0?si=taxLfNyivd9AwrgK)  | [![Illustrate Union Find](https://i.ytimg.com/vi/XfWvkZmarNA/hqdefault.jpg)](https://youtu.be/XfWvkZmarNA?si=M0z3YoOtnwFmHP7t) |
+
 # Illustration of MCST
-[![Illustrate MCST](https://i.ytimg.com/vi/KsobpcI3dN0/hqdefault.jpg)](https://youtu.be/KsobpcI3dN0?si=taxLfNyivd9AwrgK) 
+| Kruskal Algorithms | Union Find Kruskal's Algorithm |
+| :---: | :---: |
+| [![Kruskal's Algorithm](https://i.ytimg.com/vi/drSPZL6A0RI/hqdefault.jpg)](https://youtu.be/drSPZL6A0RI?si=khKtpqyrMAJEyJRc)  | [![Union Find Kruskal's Algorithm](https://i.ytimg.com/vi/JZBQLXgSGfs/hqdefault.jpg)](https://youtu.be/JZBQLXgSGfs?si=Z_XEa7-UGtA0Bxr0) |
 
 # Kruskal's Algorithm is a "Greedy" approach to finding MCST
   - Sort edges: sort all edges in the graph by their weight in ascending order.
   - Pick edges: iterate through the sorted list and pick the edge with the smallest weight.
   - Cycle detection: if adding the edge connects two vertices that are in different sets, add it to the MST and merge the sets. If the vertices are already in the same set, discard the edge (as it would form a cycle).
   - Termination: stop when there are \(V-1\) edges in the MST (where \(V\) is the number of vertices). 
-
-# Illustration of Kruskal's Algorithm
-[![Kruskal's Algorithm](https://i.ytimg.com/vi/drSPZL6A0RI/hqdefault.jpg)](https://youtu.be/drSPZL6A0RI?si=khKtpqyrMAJEyJRc)
 
 # Implement Kruskal's Algorithm
 
@@ -230,6 +234,11 @@ def delete_edge(self, key1, key2):
 - Dijkstra's is essentially a Greedy Algorithm. Its fundamental principle is: at each step, select the unvisited node with the "shortest" current distance from the source, and use it as a bridge to update the distances to its neighboring nodes.
 - Dijkstra’s does not work with negative edge weights. If a graph contains negative weights, the Bellman-Ford algorithm is typically used instead.
 
+# Illustration of Dijkstra's Algorithm
+| Concept | Illustration |
+| :---: | :---: |
+| [![Dijkstra's Concept](https://i.ytimg.com/vi/HHvjmLKJaxM/hqdefault.jpg)](https://youtu.be/HHvjmLKJaxM?si=wdVEbRaHKf8gpdbC) | [![Dijkstra's Detail](https://i.ytimg.com/vi/8POyTJu-XHw/hqdefault.jpg)](https://youtu.be/8POyTJu-XHw?si=r9jUwoniXefeMIQz) |
+
 # Steps of Dijkstra's Algorithm
 1. Initialization: Set the distance to the source node to 0 and all other nodes to ∞. Mark all nodes as "unvisited."
 2. Selection: From the set of unvisited nodes, pick the one with the shortest distance to the source as the "current node."
@@ -237,11 +246,8 @@ def delete_edge(self, key1, key2):
 4. Mark as Visited: Once neighbors are checked, mark the current node as "visited." It will not be processed again.
 5. Repeat: Repeat steps 2 through 4 until all nodes are visited or the shortest path to a specific target is found.
 
-# Illustration of Dijkstra's Algorithm
-[![Dijkstra's Algorithm](https://i.ytimg.com/vi/JLARzu7coEs/hqdefault.jpg)](https://youtu.be/JLARzu7coEs?si=Gwncu1OsUnjtECeb)
-
 # Implement Dijkstra's Algorithm
-[ch11_graph_dijkstra.py](code/ch11_graph_dijkstra.py)
+[ch11_graph_dijkstra_simple.py](code/ch11_graph_dijkstra_simple.py)
 
 # Recap
 - Graphs are data structures that model relationships between entities.

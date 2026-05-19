@@ -17,7 +17,7 @@ style: |
     gap: 1rem;
   }
   .columns img {
-    width: 100%;
+    width: 80%;
   }
 
   .middle-grid {
@@ -424,10 +424,11 @@ def delete(self, value):
             parent.right = new_node
 ```
 # Illustrate BST Delete
-<div class="middle-grid">
+<div class="columns">
     <img src="asset/image/tree_delete_example_1.png">
     <img src="asset/image/tree_delete_example_2.png">
     <img src="asset/image/tree_delete_example_3.png">
+    <img src="asset/image/tree_delete_example_4.png">
 </div>
 
 # Tree Category
