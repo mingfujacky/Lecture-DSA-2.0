@@ -42,10 +42,10 @@ style: |
   }
 ---
 # Searching
-- Searching is the process of finding the location of a target value within a collection of data. It is a fundamental operation in Computer Science, used in everything from database queries to finding a contact on your phone.
+Searching is the process of finding the location of a target value within a collection of data. It is a fundamental operation in Computer Science, used in everything from database queries to finding a contact on your phone.
   - Input: a collection of elements and a target value.
   - Output: the index (position) of the target if found, or a signal (like -1) if the target does not exist in the collection.
-- Searching algorithms are fundamental for optimizing search operations, organizing data, and improving the efficiency of various applications.
+
 
 # Searching Algorithms 
 - **Linear Search**: A simple algorithm that checks each element in the list sequentially until the desired element is found or the list ends.

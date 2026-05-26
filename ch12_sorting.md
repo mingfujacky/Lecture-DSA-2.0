@@ -141,11 +141,6 @@ insertion sort: [2, 4<sub>a</sub>, 4<sub>b</sub>] (stable)
 [ch12_sorting_heap.py](code/ch12_sorting_heap.py)
 
 # Radix Sort: "The Digit-by-Digit Organizer"
-- Imagine sorting a stack of mail by ZIP code. Instead of comparing two full addresses at once, you first group them by the last digit, then the second-to-last, and so on until you reach the first digit. By the end, the entire stack is perfectly ordered.
-- Logic: A non-comparative sorting algorithm that avoids direct element-to-element comparisons. It processes numbers digit by digit, typically from the Least Significant Digit (LSD) to the Most Significant Digit (MSD), using a stable sub-sort (like Counting Sort) as a bucket manager.
-- Efficiency: $O(d \cdot (n + k))$, where $n$ is the number of elements, $k$ is the range of digits (usually 10 for decimal), and $d$ is the number of digits in the largest number.
-
-# Key Steps of Radix Sort
 - Find the Maximum: Identify the number with the most digits to determine how many passes are required.
 - Bucket Distribution: starting from the ones place, place each number into a "bucket" (0–9) based on the current digit.
 - Collect and Repeat: flatten the buckets back into the main list. Move to the tens place, hundreds place, etc., and repeat until all digit positions are processed.
@@ -153,15 +148,30 @@ insertion sort: [2, 4<sub>a</sub>, 4<sub>b</sub>] (stable)
 [![Radix Sort Algorithm](https://i.ytimg.com/vi/Uey0-GOMtT8/mqdefault.jpg)](https://youtu.be/Uey0-GOMtT8?si=fufjl05piwGHWT94)
 [ch12_sorting_radix.py](code/ch12_sorting_radix.py)
 
+# Radix Sort Analysis
+- Use case: imagine sorting a stack of mail by ZIP code. Instead of comparing two full addresses at once, you first group them by the last digit, then the second-to-last, and so on until you reach the first digit. By the end, the entire stack is perfectly ordered.
+- Logic: A non-comparative sorting algorithm that avoids direct element-to-element comparisons. It processes numbers digit by digit, typically from the Least Significant Digit (LSD) to the Most Significant Digit (MSD).
+- Efficiency: $O(d \cdot (n + k))$, where $n$ is the number of elements, $k$ is the range of digits (usually 10 for decimal), and $d$ is the number of digits in the largest number.
+
 # Summary Table of Advanced Sorting Algorithms
 | Algorithm | Best Case | Worst Case | Intuition |Stability |
 |-----------|-----------|------------|-----------|-----------|
-| Merge Sort | $O(n \log n)$ | $O(n \log n)$ | Divide and conquer | Stable |
-| Quick Sort | $O(n \log n)$ | $O(n^2)$ | Partitioning around a pivot | Unstable |
-| Heap Sort | $O(n \log n)$ | $O(n \log n)$ | Using a binary heap structure | Unstable |
-| Radix Sort | $O(d \times (n + k))$ | $O(d \times (n + k))$ | Sorting digit by digit into buckets | Stable |
+| Merge Sort | $Ω(n \log n)$ | $O(n \log n)$ | Divide and conquer | Stable |
+| Quick Sort | $Ω(n \log n)$ | $O(n^2)$ | Partitioning by a pivot | Unstable |
+| Heap Sort | $Ω(n \log n)$ | $O(n \log n)$ | Using a binary heap| Unstable |
+| Radix Sort | $Ω(d \times (n + k))$ | $O(d \times (n + k))$ | Sorting digit by digit| Stable |
 
-Note for Radix Sort: $d$ is the number of digits, $n$ is the number of elements, and $k$ is the base (e.g., 10).
+# Unstable Sorting
+Quick sort
+- Initial Array: [5<sub>a</sub>, 3, 5<sub>b</sub>, 2]
+- Pivot chosen: The last element, which is $2$
+- Resulting Array after swap: [2, 3, 5<sub>b</sub>, 5<sub>a</sub>]
+
+Heap sort
+- Initial Array: [5<sub>a</sub>, 5<sub>b</sub>, 2]
+- After building the Max-Heap, the largest element (5<sub>a</sub>) is at the root.
+- After swapping the root with the last element and re-heapifying, the order of the two 5s can change, resulting in [5<sub>b</sub>, 2, 5<sub>a</sub>] after the first pass.
+- After the second pass, the final sorted array could be [2, 5<sub>b</sub>, 5<sub>a</sub>].
 
 # Recap
 - Sorting is a fundamental operation in computer science that organizes data in a specific order.

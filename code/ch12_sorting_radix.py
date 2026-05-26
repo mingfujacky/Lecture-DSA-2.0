@@ -4,9 +4,7 @@
 
 def radix_sort(arr):
     """
-    簡化版的基數排序 (Radix Sort)。
-    使用「水桶 (Buckets)」的概念代替複雜的計數排序 (Counting Sort) 邏輯，
-    更適合初學者理解。
+    簡化版的基數排序 (Radix Sort)，使用「水桶 (Buckets)」的概念
     """
     # 如果陣列為空或只有一個元素，則已經排序完成
     if len(arr) <= 1:
