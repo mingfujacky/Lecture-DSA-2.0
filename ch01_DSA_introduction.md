@@ -265,3 +265,6 @@ def binary_search(arr, x):
 (b) Organize user input
 (c) Provide step-by-step instructions to solve a problem
 (d) Format strings
+
+# New Grads Interview 2026 April
+[![New Grads Interview 2026 April](https://i.ytimg.com/vi/j1IrxC1k8qQ/mqdefault.jpg)](https://youtu.be/j1IrxC1k8qQ?si=oKdyDujPj5JD6ZQL&t=874)
