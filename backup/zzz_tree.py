@@ -44,7 +44,9 @@ def traverse_tree(root):
 def invertTree(root):
     if not root:
         return None
-    root.left, root.right = invertTree(root.right), invertTree(root.left)
+    root.left, root.right = root.right, root.left
+    invertTree(root.left)
+    invertTree(root.left)
     return root
 
 
