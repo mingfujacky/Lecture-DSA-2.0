@@ -50,7 +50,7 @@ style: |
 # [520030] 資料結構與演算法
 ## Data Structures and Algorithms (DSA)
 > 課程講師：林志偉 (jacky.jw.lin@nycu.edu.tw)
-> 課程助教：TBD
+> 課程助教：林睿禹 (royyou0815.sc14@nycu.edu.tw), 陳叡柏 (redbull-chen.sc15@nycu.edu.tw)
 > 教材網站：https://github.com/mingfujacky/Lecture-DSA-2.0.git
 > 上課書籍：Marcello La Rocca, Grokking Data Structures, Manning, 2024
 > 參考書籍：Python 資料結構 X 演算法 刷題鍛鍊班, 旗標出版社, 2022
@@ -78,12 +78,9 @@ https://youtu.be/iqdzXaXhfQc?si=lvI9_4E8ChhEyQlY
 
 
 # 評分方式
-- (10%) 課堂參與
-  > 5次點名 
-  > 正常出席得 2分, 有請假單得 1分, 無故缺席得 0分
 - (30%) 課後作業: 6次作業 (不受理遲交)
-- (25%) 期中考試
-- (25%) 期末考試
+- (30%) 期中考試
+- (30%) 期末考試
 - (10%) 期末專題: 期末考前一週進行口頭報告並上傳期末專題書面報告 (不受理遲交)
 > 除「成績計算」或「登錄」有誤外，請同學勿以個人理由請求調整成績
 
@@ -91,7 +88,7 @@ https://youtu.be/iqdzXaXhfQc?si=lvI9_4E8ChhEyQlY
 > 1. 按照助教安排進入考場入座，不得攜帶書本及參考資料
 > 2. 不得使用手機，請將手機放置在監考人員的可視範圍內，如桌上或教室前面
 > 3. 攜帶學生證或其他可以確認身份的證件
-> 4. 考試時間為六十分鐘或九十分鐘，請同學注意試卷規定
+> 4. 考試時間為九十分鐘
 
 # 期末專題
 > 1. 本課程之期末專題採個人專題形式進行。每位同學將被隨機分配三到五題 LeetCode 題目，作為期末專題之研究與實作內容。
